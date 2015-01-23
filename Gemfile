@@ -6,13 +6,11 @@ gem 'rails', '4.0.0'
 gem 'json', '~> 1.7.7'
 
 group :development do
-  gem 'sqlite3'
   gem 'pry-rails'
 end
 
 group :production do
   gem 'thin'
-  gem 'pg'
 end
 
 # Gems used only for assets and not required
@@ -28,6 +26,9 @@ group :development, :test do
   gem 'shoulda'
 end
 
+#postgresql
+gem 'pg'
+
 # jQuery
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
@@ -40,3 +41,6 @@ gem 'rails_config'
 
 # For Heroku
 gem 'rails_12factor'
+
+# multi-tenancy
+gem 'apartment'
