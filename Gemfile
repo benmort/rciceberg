@@ -27,8 +27,8 @@ group :development, :test do
   gem 'sqlite3'
 end
 
-#postgresql
-# gem 'pg'
+# postgresql
+gem 'pg'
 
 # jQuery
 gem 'jquery-rails'
