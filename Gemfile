@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.0.0'
+ruby '2.1.3'
 
 gem 'rails', '4.0.0'
 gem 'json', '~> 1.7.7'
@@ -24,10 +24,11 @@ end
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'
   gem 'shoulda'
+  gem 'sqlite3'
 end
 
 #postgresql
-gem 'pg'
+# gem 'pg'
 
 # jQuery
 gem 'jquery-rails'
@@ -44,3 +45,5 @@ gem 'rails_12factor'
 
 # multi-tenancy
 gem 'apartment'
+
+gem 'protected_attributes'
