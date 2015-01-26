@@ -41,6 +41,3 @@ gem 'rails_config'
 
 # For Heroku
 gem 'rails_12factor'
-
-# multi-tenancy
-gem 'apartment'
