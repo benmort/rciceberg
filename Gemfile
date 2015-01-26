@@ -28,7 +28,7 @@ group :development, :test do
 end
 
 # postgresql
-gem 'pg'
+# gem 'pg'
 
 # jQuery
 gem 'jquery-rails'
