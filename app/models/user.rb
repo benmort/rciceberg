@@ -1,3 +1,4 @@
 class User < ActiveRecord::Base
-  has_many :orders
+	attr_accessible :email
+  	has_many :orders
 end

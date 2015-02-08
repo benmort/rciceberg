@@ -1,0 +1,24 @@
+<div id="header">
+  <div class="wrapper clearfix">
+    <h1 id="rc_iceberg_header">Product</h1>
+  </div>
+</div>
+<div class="gray_background">
+  <div class="wrapper">
+	<p>
+	  <b>Name:</b>
+	  <%= @product.name %>
+	</p>
+	<p>
+	  <b>Domain:</b>
+	  <%= @product.domain %>
+	</p>
+	<p>
+	  <b>Subdomain:</b>
+	  <%= @product.subdomain %>
+	</p>
+	<br />
+	<%= link_to 'Edit', edit_product_path(@product) %> |
+	<%= link_to 'Back', products_path %>
+  </div>
+</div>

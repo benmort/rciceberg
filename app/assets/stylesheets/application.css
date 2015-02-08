@@ -11,7 +11,8 @@
  *= require_self
  *= require reset
  *= require main
- *= require jquery.ui.all
+ *= require admin
+ *= require jquery-ui
  */
 .hidden
 {

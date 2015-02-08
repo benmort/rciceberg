@@ -5,11 +5,12 @@ Selfstarter =
     # It probably should be a parser, but there isn't enough time for that (Maybe in the future though!)
     if /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/.test($("#email").val())
       $("#email").removeClass("highlight")
-      $("#amazon_button").removeClass("disabled")
+      $("#master_checkout_button").removeClass("disabled")
     else
       $("#email").addClass("highlight") unless Selfstarter.firstTime
-      $("#amazon_button").addClass("disabled") unless $("#amazon_button").hasClass("disabled")
+      $("#master_checkout_button").addClass("disabled") unless $("#master_checkout_button").hasClass("disabled")
   init: ->
+
     checkoutOffset = $('body').height() - $('.footer').outerHeight() #needs to be done upon init
 
     $("#email").bind "textchange", ->
@@ -20,6 +21,35 @@ Selfstarter =
     $("#email").change ->
       Selfstarter.firstTime = false
 
+    $(".button").on "click", ->
+      $button = $(this)
+      oldValue = $button.parent().find("input").val()
+      if $button.text() is "+"
+        newVal = parseFloat(oldValue) + 1
+      else
+        
+        # Don't allow decrementing below zero
+        if oldValue > 0
+          newVal = parseFloat(oldValue) - 1
+          if newVal == 0
+            newVal = 1
+        else
+          newVal = 1
+      $button.parent().find("input").val newVal
+      updateCartQuantityChange newVal
+
+    $("#amazon_checkout_button").click ->
+      $("#paypal_payment_method").prop "checked", false
+      $("#amazon_payment_method").prop "checked", true
+
+    $("#paypal_checkout_button").click ->
+      $("#amazon_payment_method").prop "checked", false
+      $("#paypal_payment_method").prop "checked", true
+
+    
+    updateCartQuantityChange = (quantityVal) ->
+      $("#summary_product_quantity").html quantityVal
+  
     # init placeholder image for video
     $("#video_image").on "click", ->
       $("#player").removeClass("hidden")
