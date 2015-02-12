@@ -29,6 +29,9 @@ group :development, :test do
   gem 'sqlite3'
 end
 
+# postgresql
+# gem 'pg'
+
 # jQuery
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
