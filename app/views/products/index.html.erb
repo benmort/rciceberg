@@ -8,8 +8,9 @@
     <table class="admin_table">
       <tr>
         <th>Name</th>
-        <th>Domain</th>
-        <th>Subdomain</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Stock</th>
         <th></th>
         <th></th>
         <th></th>
@@ -17,8 +18,9 @@
     <% @products.each do |product| %>
       <tr>
         <td><%= product.name %></td>
-        <td><%= product.domain %></td>
-        <td><%= product.subdomain %></td>
+        <td><%= product.description %></td>
+        <td><%= product.price %></td>
+        <td><%= product.stock %></td>
         <td><%= link_to 'Show', product %></td>
         <td><%= link_to 'Edit', edit_product_path(product) %></td>
         <td><%= link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete %></td>

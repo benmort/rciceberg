@@ -53,5 +53,3 @@ gem "paperclip", "~> 4.2"
 
 #admin tenant creation
 gem 'devise'
-
-gem 'formtastic'

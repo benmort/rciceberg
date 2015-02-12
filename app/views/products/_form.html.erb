@@ -30,7 +30,7 @@
     <%= f.label :stock %><br />
     <%= f.text_field :stock %>
   </div>
-  <%= f.fields_for :images do |image_upload| %> 
+  <%= f.fields_for :image do |image_upload| %> 
     <% image_upload.file_field :image, class: "form-control"  %>
   <% end %>
   <br />
