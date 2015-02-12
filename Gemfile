@@ -10,6 +10,8 @@ group :development do
 end
 
 group :production do
+  # postgresql
+  gem 'pg'
   gem 'thin'
 end
 
@@ -34,6 +36,10 @@ end
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
+
+# Paypal Express Payments
+gem 'paypal-express'
+
 # Kickstarter's awesome Amazon Flexible Payments gem
 gem 'amazon_flex_pay'
 
@@ -43,7 +49,12 @@ gem 'rails_config'
 # For Heroku
 gem 'rails_12factor'
 
-# multi-tenancy
-gem 'apartment'
-
 gem 'protected_attributes'
+
+#image processing
+gem "paperclip", "~> 4.2"
+
+#admin tenant creation
+gem 'devise'
+
+gem 'formtastic'

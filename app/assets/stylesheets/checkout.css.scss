@@ -14,8 +14,18 @@
   }
   #checkout
   {
+    #quantity
+    {
+      margin: 5px;
+      padding: 15px;
+      border-radius: 10px;
+      border: 1px solid #CCC;
+      width: 50px;
+      outline: none;
+    }
     #email
     {
+      margin: 5px;
       padding: 15px;
       border-radius: 10px;
       border: 1px solid #CCC;
@@ -26,12 +36,32 @@
       {
       border: 1px solid orange;
     }
-    #amazon_button
-    {
-      margin-top: 5px;
-      padding: 15px;
+    #amazon_checkout_button,
+    #paypal_checkout_button {
+      width: 275px;
       border: none;
+      padding:20px;
+      margin-bottom: 20px;
+      cursor: pointer;
+      text-decoration: none;
+
+      span, input {
+        position: relative;
+        bottom: 32px;
+        padding: 0 20px 0px 0px;
+      }
     }
+    #master_checkout_button {
+      width: 335px;
+      border: none;
+      padding:20px;
+      margin-bottom: 20px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+  }
+  #payment_method_description {
+    font-size:16px;
   }
 }
 
@@ -64,7 +94,7 @@
       }
     }
   }
-  #amazon_button
+  #amazon_checkout_button
   {
     display: inline !important;
   }
@@ -227,5 +257,18 @@
     font-size: 18px;
     margin-bottom: 30px;
     line-height: 1.3;
+  }
+
+  #external_amazon_button,
+  #external_ebay_button {
+    padding:20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+
+    span {
+      position: relative;
+      bottom: 32px;
+      padding: 0 20px 0px 0px;
+    }
   }
 }

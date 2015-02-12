@@ -1,4 +1,8 @@
 Selfstarter::Application.routes.draw do
+  devise_for :admins
+  resources :products
+  resources :tenants
+
   root :to => 'preorder#index'
   match '/preorder'               => 'preorder#index', :via => [:get,:post]
   get 'preorder/checkout'

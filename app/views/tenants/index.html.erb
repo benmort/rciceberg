@@ -1,0 +1,31 @@
+<div id="header">
+  <div class="wrapper clearfix">
+    <h1 id="rc_iceberg_header">Tenants</h1>
+  </div>
+</div>
+<div class="gray_background">
+  <div class="wrapper">
+    <table class="admin_table">
+      <tr>
+        <th>Name</th>
+        <th>Domain</th>
+        <th>Subdomain</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    <% @tenants.each do |tenant| %>
+      <tr>
+        <td><%= tenant.name %></td>
+        <td><%= tenant.domain %></td>
+        <td><%= tenant.subdomain %></td>
+        <td><%= link_to 'Show', tenant %></td>
+        <td><%= link_to 'Edit', edit_tenant_path(tenant) %></td>
+        <td><%= link_to 'Destroy', tenant, :confirm => 'Are you sure?', :method => :delete %></td>
+      </tr>
+    <% end %>
+    </table>
+    <br />
+    <%= link_to 'New tenant', new_tenant_path %>
+  </div>
+</div>
