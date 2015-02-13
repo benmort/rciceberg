@@ -1,7 +1,7 @@
 <div class="sidebar">
   <h5>Order Summary</h5>
   <hr>
-  <span id="summary_product_quantity">1</span> x  $<span id="summary_product_price"></span>
+  <span id="summary_product_quantity">1</span> x  $<span id="summary_product_price"><%= current_tenant.product.inspect %></span>
   <hr>
   <span>Total:  $</span><span id="summary_product_price"></span>
   <br />
@@ -12,17 +12,17 @@
   <p>
   </p>
   <ul>
-  	<li>
-  		<a class="gray_button" id="external_amazon_button">
-  			<span>Order on</span>
-  			<img alt="amazon_checkout_place_holder" src="/assets/amazon_small_alt.png" />
-  		</a>
-  	</li>
-  	<li>
-  	  	<a class="gray_button" id="external_ebay_button">
-  			<span>Order on</span>
-  			<img alt="ebay_checkout_place_holder" src="/assets/ebay_small_alt.png" />
-  		</a>
-  	</li>
+    <li>
+      <a class="gray_button" id="external_amazon_button">
+        <span>Order on</span>
+        <img alt="amazon_checkout_place_holder" src="/assets/amazon_small_alt.png" />
+      </a>
+    </li>
+    <li>
+        <a class="gray_button" id="external_ebay_button">
+        <span>Order on</span>
+        <img alt="ebay_checkout_place_holder" src="/assets/ebay_small_alt.png" />
+      </a>
+    </li>
   </ul>
 </div>
