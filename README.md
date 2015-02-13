@@ -12,4 +12,8 @@ Setup:
 ```
 Tenant.create :name => "iceberg", :domain => "rciceberg.com", :subdomain => "dev"
 ```
+* Create a new product in `rails c`:
+```
+Product.create :name => "Test", :description => "test product desc", :price => 19.95, :stock => 100
+```
 * Hit `dev.rciceberg.com:3000` to test
