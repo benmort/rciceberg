@@ -75,6 +75,7 @@ ships: "Ships to you same day"
 
 # On rc_iceberg, it's "Reserve Now"
 call_to_action: "Order Now"
+
 # On rc_iceberg, this is "Only $149 for a limited time"
 price_human: "It costs money!"
 
