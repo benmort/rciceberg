@@ -16,7 +16,7 @@ RCIceberg = {
     }
   },
   init: function() {
-    var checkoutOffset = $('body').height() - $('.footer').outerHeight();,
+    var checkoutOffset = $('body').height() - $('.footer').outerHeight(),
         onScroll,
         updateCartQuantityChange;
 
