@@ -11,7 +11,7 @@ end
 
 group :production do
   # postgresql
-  gem 'pg'
+  # gem 'pg'
   gem 'thin'
 end
 
@@ -51,8 +51,8 @@ gem 'rails_12factor'
 
 gem 'protected_attributes'
 
-#image processing
+# image processing
 gem "paperclip", "~> 4.2"
 
-#admin tenant creation
+# admin tenant creation
 gem 'devise'

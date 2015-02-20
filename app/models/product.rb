@@ -1,5 +1,4 @@
 class Product < ActiveRecord::Base
-
 	has_one :product_image, :class_name => 'ProductImage', dependent: :destroy
 	belongs_to :tenant
     attr_accessible :name, :description, :price, :stock, :product_image, :product_image_attributes, :source, :tenant_id

@@ -42,7 +42,11 @@ layout 'admin'
   def create
     @product = Product.new(params[:product])
 
+    # update the product tenant_id from the selected tenant
+    @product.update(:tenant_id => params[:tenant][:tenant_id])
+
     respond_to do |format|
+
       if @product.save
         format.html { redirect_to(@product, :notice => 'product was successfully created.') }
         format.xml  { render :xml => @product, :status => :created, :location => @product }
@@ -57,6 +61,9 @@ layout 'admin'
   # PUT /products/1.xml
   def update
     @product = Product.find(params[:id])
+
+    # update the product tenant_id from the selected tenant
+    @product.update(:tenant_id => params[:tenant][:tenant_id])
 
     respond_to do |format|
       if @product.update_attributes(params[:product])
