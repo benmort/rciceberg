@@ -49,6 +49,8 @@ Selfstarter =
     
     updateCartQuantityChange = (quantityVal) ->
       $("#summary_product_quantity").html quantityVal
+      total_price = parseFloat(quantityVal) * parseFloat($('#summary_product_price').attr('price-float'))
+      $('#summary_total_price').html '$' + total_price
   
     # init placeholder image for video
     $("#video_image").on "click", ->

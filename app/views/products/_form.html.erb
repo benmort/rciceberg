@@ -11,8 +11,8 @@
     </div>
   <% end %>
   <div class="field">
-    <%= f.label :tenant %><br />
-    <%= collection_select(:tenant, :tenant_id, Tenant.all, :id, :name, :prompt => 'Please select Tenant') %>
+    <%= f.label :tenant_id %><br />
+    <%= collection_select(:product, :tenant_id, Tenant.all, :id, :name, :prompt => 'Please select Tenant') %>
   </div>
   <div class="field">
     <%= f.label :name %><br />
@@ -30,8 +30,10 @@
     <%= f.label :stock %><br />
     <%= f.text_field :stock %>
   </div>
-  <%= f.fields_for :image do |image_upload| %> 
-    <% image_upload.file_field :image, class: "form-control"  %>
+  <%= f.fields_for :product_image_attributes do |images_form| %>
+    <div class="file_field">         
+       <%= images_form.file_field :source %>         
+    </div>
   <% end %>
   <br />
   <div class="actions">

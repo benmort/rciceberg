@@ -1,9 +1,17 @@
 <div class="sidebar">
+  <h5><%= current_tenant.product.name %></h5>
+  <%= image_tag current_tenant.product.images %>
   <h5>Order Summary</h5>
   <hr>
-  <span id="summary_product_quantity">1</span> x  $<span id="summary_product_price"></span>
+  <div class="left-brace-sidebar">
+    <span id="summary_product_quantity">1</span> x  
+  </div>
+  <span id="summary_product_price" price-float='<%= current_tenant.product.price %>' ><%= current_tenant.product.human_price %></span>
   <hr>
-  <span>Total:  $</span><span id="summary_product_price"></span>
+  <div class="left-brace-sidebar">
+    <span>Total:</span>
+  </div>
+  <span id="summary_total_price">$<%= current_tenant.product.price %></span>
   <br />
   <br />
   <br />

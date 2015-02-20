@@ -26,7 +26,6 @@ layout 'admin'
   # GET /products/new.xml
   def new
     @product = Product.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @product }
