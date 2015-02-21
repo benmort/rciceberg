@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
+  layout :layout_by_resource
   around_filter :scope_current_tenant
 
 private
@@ -21,4 +22,15 @@ private
   ensure
     Tenant.current_id = nil
   end
+
+  protected
+
+  def layout_by_resource
+    if devise_controller?
+      "application_devise"
+    else
+      "application"
+    end
+  end
+
 end

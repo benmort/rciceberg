@@ -1,4 +1,7 @@
 class ProductsController < ApplicationController
+
+before_action :authenticate_admin!
+
 layout 'admin'
   # GET /products
   # GET /products.xml

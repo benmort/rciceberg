@@ -1,4 +1,7 @@
 class TenantsController < ApplicationController
+
+before_action :authenticate_admin!
+
 layout 'admin'
   # GET /tenants
   # GET /tenants.xml
