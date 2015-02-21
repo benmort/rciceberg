@@ -1,0 +1,26 @@
+.wrapper.clearfix
+  #video
+    - if Settings.use_video_placeholder
+      #video_image
+        img alt="video_place_holder" height="385px" src="/assets/video_placeholder.png" width="512px" /
+      #player.hidden style=("display: none;") 
+        object height="385" width="512" 
+          param name="movie" value="#{Settings.video_embed_url}?autohide=1=0=0=1" /
+          param name="allowFullScreen" value="true" /
+          param name="allowscriptaccess" value="always" /
+          embed allowfullscreen="true" allowscriptaccess="always" height="385" src="#{Settings.video_embed_url}?autohide=1=0=0=1" type="application/x-shockwave-flash" width="512" 
+    - else
+      iframe height="385" src=video_url width="512" 
+  #backing
+    #reserve_container
+      p#price= current_tenant.product.human_price
+      a.blue_button.reserve href="/order/checkout" = Settings.call_to_action
+      p#ship_date= Settings.ships
+      p= Settings.dont_give_them_a_reason_to_say_no
+    ul
+      li#backers.stats
+        = number_with_delimiter Order.completed_orders, :delimiter => ","
+        span ordered
+      li#days.stats
+        = current_tenant.product.stock
+        span left in stock

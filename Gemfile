@@ -11,7 +11,7 @@ end
 
 group :production do
   # postgresql
-  # gem 'pg'
+  gem 'pg'
   gem 'thin'
 end
 
@@ -29,13 +29,9 @@ group :development, :test do
   gem 'sqlite3'
 end
 
-# postgresql
-# gem 'pg'
-
 # jQuery
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
-
 
 # Paypal Express Payments
 gem 'paypal-express'
@@ -56,3 +52,6 @@ gem "paperclip", "~> 4.2"
 
 # admin tenant creation
 gem 'devise'
+
+# slim templates
+gem 'slim'

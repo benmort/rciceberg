@@ -53,7 +53,7 @@ class Order < ActiveRecord::Base
   end
 
   # See what it looks like when you have some backers! Drop in a number instead of Order.count
-  def self.backers
+  def self.completed_orders
     Order.completed.count
   end
 

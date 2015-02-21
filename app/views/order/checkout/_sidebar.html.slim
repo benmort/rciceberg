@@ -1,0 +1,29 @@
+.sidebar
+  h5= current_tenant.product.name
+  = image_tag current_tenant.product.product_image ? current_tenant.product.product_image.source.url : nil
+  h5 Order Summary
+  hr/
+  .left-brace-sidebar
+    span#summary_product_quantity 1
+    | x
+  span#summary_product_price price-float="#{current_tenant.product.price}" = current_tenant.product.human_price
+  hr/
+  .left-brace-sidebar
+    span Total:
+  span#summary_product_price_total
+    | $#{current_product.price}
+  br/
+  br/
+  br/
+  br/
+  h5 Order with one of our thrid party providers
+  p
+  ul
+    li
+      a#external_amazon_button.gray_button
+        span Order on
+        img alt="amazon_checkout_place_holder" src="/assets/amazon_small_alt.png" /
+    li
+      a#external_ebay_button.gray_button
+        span Order on
+        img alt="ebay_checkout_place_holder" src="/assets/ebay_small_alt.png" /

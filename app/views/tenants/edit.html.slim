@@ -1,0 +1,9 @@
+#header
+  .wrapper.clearfix
+    h1#rc_iceberg_header Editing tenant
+.gray_background
+  .wrapper
+    = render 'form'
+    = link_to 'Show', @tenant
+    | \
+    | \#{link_to 'Back', tenants_path}

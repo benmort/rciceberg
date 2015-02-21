@@ -1,0 +1,23 @@
+#header
+  .wrapper.clearfix
+    h1#rc_iceberg_header Tenants
+.gray_background
+  .wrapper
+    table.admin_table
+      tr
+        th Name
+        th Domain
+        th Subdomain
+        th
+        th
+        th
+      - @tenants.each do |tenant|
+        tr
+          td= tenant.name
+          td= tenant.domain
+          td= tenant.subdomain
+          td= link_to 'Show', tenant
+          td= link_to 'Edit', edit_tenant_path(tenant)
+          td= link_to 'Destroy', tenant, :confirm => 'Are you sure?', :method => :delete
+    br/
+    = link_to 'New tenant', new_tenant_path

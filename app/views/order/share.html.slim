@@ -1,0 +1,22 @@
+#share_container.gray_background
+  #congrats.wrapper.center
+    h2
+      | Hooray! You've just reserved #{Settings.product_description}!
+    p
+      | Congratulations, you're #{Settings.primary_stat_verb} number
+      span#backer_number= number_with_delimiter Order.backers, :delimiter => ","
+      = Settings.product_name
+      | \. Share the great news!
+    br/
+    br/
+    #share.clearfix
+      #pin_button_container
+        = pin_it_button
+      #tweet_button_container
+        = tweet_button
+      #facebook_button_container
+        = like_button(450, true)
+    #order_id
+      | Reservation ID: #{@order.uuid}. You can bookmark or print this page for your records.
+= render 'order/share/twitter_js'
+= render 'order/share/facebook_js'

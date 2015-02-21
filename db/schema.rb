@@ -31,16 +31,23 @@ ActiveRecord::Schema.define(version: 20150208103939) do
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
 
+  create_table "albums", force: true do |t|
+    t.integer  "albumable_id"
+    t.string   "albumable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "images", force: true do |t|
+    t.integer  "imageable_id"
+    t.string   "imageable_type"
     t.string   "source_file_name"
     t.string   "source_content_type"
     t.integer  "source_file_size"
     t.datetime "source_updated_at"
-    t.integer  "imageable_id"
-    t.string   "imageable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
-
-  add_index "images", ["imageable_id", "imageable_type"], name: "index_images_on_imageable_id_and_imageable_type"
 
   create_table "orders", id: false, force: true do |t|
     t.string   "token"
@@ -73,6 +80,21 @@ ActiveRecord::Schema.define(version: 20150208103939) do
     t.string   "shipping_desc"
     t.string   "delivery_desc"
     t.integer  "limit"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "posts", force: true do |t|
+    t.string   "uid"
+    t.string   "permalink"
+    t.string   "title"
+    t.string   "blurb"
+    t.text     "content"
+    t.string   "header_image"
+    t.string   "state"
+    t.datetime "published_at"
+    t.boolean  "visible"
+    t.boolean  "recommended"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

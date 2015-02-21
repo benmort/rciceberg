@@ -1,0 +1,18 @@
+#header
+  .wrapper.clearfix
+    h1#rc_iceberg_header Tenant
+.gray_background
+  .wrapper
+    p
+      b Name:
+      = @tenant.name
+    p
+      b Domain:
+      = @tenant.domain
+    p
+      b Subdomain:
+      = @tenant.subdomain
+    br/
+    = link_to 'Edit', edit_tenant_path(@tenant)
+    | \
+    | \#{link_to 'Back', tenants_path}

@@ -1,5 +1,22 @@
 class Product < ActiveRecord::Base
-  has_one :image, as: :imageable
-    attr_accessible :name, :description, :price, :stock, :image, :images, :image_attributes, :images_attributes, :tenant_id
-  accepts_nested_attributes_for :image, :reject_if => lambda { |t| t[:image].nil?}, :allow_destroy => true
+
+	include ActionView::Helpers::NumberHelper
+	include ActionView::Helpers::TextHelper
+	include ActionView::Helpers::UrlHelper
+	include ActionView::Helpers::DateHelper
+	include ERB::Util
+	include Rails.application.routes.url_helpers
+
+	### PHOTO ALBUM ###
+	has_many :albums, :as => :albumable
+	has_many :album_images, :source => "images", :through => :albums
+
+	has_one :product_image, :class_name => 'ProductImage', dependent: :destroy
+	belongs_to :tenant
+    attr_accessible :name, :description, :price, :stock, :product_image, :product_image_attributes, :source, :tenant_id
+	accepts_nested_attributes_for :product_image, :allow_destroy => true
+
+	def human_price
+		return "$"+price.to_s
+	end
 end

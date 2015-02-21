@@ -1,0 +1,23 @@
+#header
+  .wrapper.clearfix
+    h1#rc_iceberg_header Product
+.gray_background
+  .wrapper
+    - if @product.product_images.count > 0
+      = image_tag @product.product_images.first.source.url
+    p
+      b Name:
+      = @product.name
+    p
+      b Description:
+      = @product.description
+    p
+      b Price:
+      = @product.price
+    p
+      b Stock:
+      = @product.stock
+    br/
+    = link_to 'Edit', edit_product_path(@product)
+    | \
+    | \#{link_to 'Back', products_path}
