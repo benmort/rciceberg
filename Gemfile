@@ -59,4 +59,3 @@ gem 'devise'
 
 # slim templates
 gem 'slim'
-gem 'html2slim'

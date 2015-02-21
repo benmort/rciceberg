@@ -4,8 +4,7 @@
       | Hooray! You've just reserved #{Settings.product_description}!
     p
       | Congratulations, you're #{Settings.primary_stat_verb} number
-      = succeed "," do
-        span#backer_number= number_with_delimiter Order.backers, :delimiter => ","
+      span#backer_number= number_with_delimiter Order.backers, :delimiter => ","
       = Settings.product_name
       | \. Share the great news!
     br/
