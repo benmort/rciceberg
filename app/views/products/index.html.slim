@@ -1,0 +1,27 @@
+#header
+  .wrapper.clearfix
+    h1#rc_iceberg_header Products
+.gray_background
+  .wrapper
+    table.admin_table
+      tr
+        th Name
+        th Tenant ID
+        th Description
+        th Price
+        th Stock
+        th
+        th
+        th
+      - @products.each do |product|
+        tr
+          td= product.name
+          td= product.tenant_id
+          td= product.description
+          td= product.price
+          td= product.stock
+          td= link_to 'Show', product
+          td= link_to 'Edit', edit_product_path(product)
+          td= link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete
+    br/
+    = link_to 'New product', new_product_path
