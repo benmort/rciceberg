@@ -1,0 +1,36 @@
+<div class="sidebar">
+  <h5><%= current_tenant.product.name %></h5>
+  <%= image_tag current_tenant.product.product_image ? current_tenant.product.product_image.source.url : nil %>
+  <h5>Order Summary</h5>
+  <hr>
+  <div class="left-brace-sidebar">
+    <span id="summary_product_quantity">1</span> x  
+  </div>
+  <span id="summary_product_price" price-float='<%= current_tenant.product.price %>' ><%= current_tenant.product.human_price %></span>
+  <hr>
+  <div class="left-brace-sidebar">
+    <span>Total:</span>
+  </div>
+  <span id="summary_product_price_total">$<%= current_product.price %></span>
+  <br />
+  <br />
+  <br />
+  <br />
+  <h5>Order with one of our thrid party providers</h5>
+  <p>
+  </p>
+  <ul>
+    <li>
+      <a class="gray_button" id="external_amazon_button">
+        <span>Order on</span>
+        <img alt="amazon_checkout_place_holder" src="/assets/amazon_small_alt.png" />
+      </a>
+    </li>
+    <li>
+        <a class="gray_button" id="external_ebay_button">
+        <span>Order on</span>
+        <img alt="ebay_checkout_place_holder" src="/assets/ebay_small_alt.png" />
+      </a>
+    </li>
+  </ul>
+</div>
