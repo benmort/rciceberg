@@ -1,13 +1,11 @@
 #reserve_container
 {
   float: left;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #fff;
-  -moz-box-shadow:    0 1px 0 #cbcbcb; /* drop shadow */
-  -webkit-box-shadow: 0 1px 0 #cbcbcb; /* drop shadow */
-  box-shadow:         0 1px 0 #cbcbcb; /* drop shadow */
-  margin-bottom: 30px;
+  padding-top: 20px;
   text-align: center;
+  border-bottom: 1px solid #cbcbcb;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
   p
   {
     color: #8b8a8a;
