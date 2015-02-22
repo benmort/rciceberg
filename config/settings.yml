@@ -1,34 +1,16 @@
-# Hi there!
-# These are the settings for Selfstarter.
-# This is more tidy than changing the HTML if all you want to do is rename things and swap out images
-
-# You should totally change the HTML and CSS though
-# Checkout app/assets/stylesheets/variables.css.scss to change around the CSS quickly
-
-# If you want to edit the FAQ, head over to app/views/preorder/homepage/_faqs.html.erb
-
-# An image showcasing your product -- it'll show up when you pin your product
-# It should be in app/assets/images
-default_product_image_path: "/assets/video_placeholder.png"
-
-# If set to true, then the image at "/assets/video_placeholder.png" will be shown in place of the youtube
-# video.  When the user clicks it, the vid will replace the image and start playing.
-#
-# NOTE: you can set this to false, and no image will be use - first frame of the video will be displayed
-#
-# NOTE: this only works for youtube video at the moment.  If its not for youtube, then just leave this property blank
-use_video_placeholder: true
-
 # Amazon settings -- you'll need an Amazon Payments account, sign up here --> http://bit.ly/SGksTv
+amazon_access_key: "XXXX"
+amazon_secret_key: "XXXX"
 
-# To find your access key and secret key, head over to here --> http://bit.ly/R4I4ky (Follow that guide in the Seller Central page)
-amazon_access_key: "YOUR_AMAZON_ACCESS_KEY"
-amazon_secret_key: "YOUR_AMAZON_SECRET_KEY"
+# Paypal settings
+paypal_username: "XXXX"
+paypal_password: "XXXX"
+paypal_signature: "XXXX"
 
 # if use_payment_options is set to true, then a set of radio buttons will be displayed with various payment options.
 # There is a PaymentOption model for storing info about payment options.  To set up your payment options you should
 # put code in seeds.rb, then run rake db:seed
-use_payment_options: false
+use_payment_options: true
 
 # Amazon limits how much we can charge people with their Multi-Use tokens.
 # You probably should add some leeway to account for international shipping
@@ -38,7 +20,7 @@ charge_limit: 25.00
 # Stats settings
 primary_stat: "orders"
 
-# This'll show up in the tweet as, "I'm backer number ..."
+# This'll show up in the tweet as, "I'm order number ..."
 primary_stat_verb: 'order'
 
 # The 2nd call to action button
@@ -52,7 +34,7 @@ ships: "Ships Next Day"
 call_to_action: "Order Now"
 
 # The paragraph below the price. You'd probably say something about how you're not going to charge them before it ships (so it's less risky).
-dont_give_them_a_reason_to_say_no: "Satisfaction guaranteed with a limited warranty."
+warrenty_message: "Satisfaction guaranteed with a limited warranty."
 
 # Social Stuff
 facebook_app_id: "1234567890"

@@ -16,18 +16,19 @@ RCIceberg = {
     }
   },
   init: function() {
+    RCIceberg.submitCheckoutFormTrigger();
     var checkoutOffset = $('body').height() - $('.footer').outerHeight(),
         onScroll,
         updateCartQuantityChange;
 
     $("#email").bind("textchange", function() {
-      return this.validateEmail();
+      return RCIceberg.validateEmail();
     });
     $("#email").bind("hastext", function() {
-      return this.validateEmail();
+      return RCIceberg.validateEmail();
     });
     $("#email").change(function() {
-      return this.firstTime = false;
+      return RCIceberg.firstTime = false;
     });
 
     $(".button").on("click", function() {
@@ -88,6 +89,22 @@ RCIceberg = {
         return $('.checkout_controls_wrapper').addClass("checkout_ready");
       });
     }
+  },
+  submitCheckoutFormTrigger: function(){
+    $("#master_checkout_button").click(function(e){
+      e.preventDefault();
+      if (/^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/.test($("#email").val())) {
+        $("form#checkout").submit();
+      }
+    });
+    $("form#checkout").submit(function(e){
+      if (!/^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/.test($("#email").val())) {
+        e.preventDefault();
+      }
+    });
+  },
+  submitCheckoutForm: function(){
+    
   }
 };
 

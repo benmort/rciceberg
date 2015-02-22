@@ -12,7 +12,7 @@ class Order < ActiveRecord::Base
     @order.user_id        = options[:user_id]
     @order.price          = options[:price]
     @order.number         = Order.next_order_number
-    @order.payment_option = options[:payment_option] if !options[:payment_option].nil?
+    @order.payment_option = options[:payment_option]
     @order.save!
 
     @order

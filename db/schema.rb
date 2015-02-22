@@ -74,12 +74,10 @@ ActiveRecord::Schema.define(version: 20150208103939) do
   end
 
   create_table "payment_options", force: true do |t|
-    t.decimal  "amount"
-    t.string   "amount_display"
+    t.string   "name"
+    t.string   "fee_type"
+    t.decimal  "fee"
     t.text     "description"
-    t.string   "shipping_desc"
-    t.string   "delivery_desc"
-    t.integer  "limit"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,4 +1,4 @@
-Selfstarter =
+RCIceberg =
   firstTime: true
   validateEmail: ->
     # The regex we use for validating email
@@ -7,19 +7,17 @@ Selfstarter =
       $("#email").removeClass("highlight")
       $("#master_checkout_button").removeClass("disabled")
     else
-      $("#email").addClass("highlight") unless Selfstarter.firstTime
+      $("#email").addClass("highlight") unless RCIceberg.firstTime
       $("#master_checkout_button").addClass("disabled") unless $("#master_checkout_button").hasClass("disabled")
   init: ->
-
     checkoutOffset = $('body').height() - $('.footer').outerHeight() #needs to be done upon init
-
     $("#email").bind "textchange", ->
-      Selfstarter.validateEmail()
+      RCIceberg.validateEmail()
     $("#email").bind "hastext", ->
-      Selfstarter.validateEmail()
+      RCIceberg.validateEmail()
     # The first time they type in their email, we don't want it to throw a validation error
     $("#email").change ->
-      Selfstarter.firstTime = false
+      RCIceberg.firstTime = false
 
     $(".button").on "click", ->
       $button = $(this)
@@ -81,5 +79,5 @@ Selfstarter =
         onScroll()
         $('.checkout_controls_wrapper').addClass "checkout_ready"
 $ ->
-  Selfstarter.init()
+  RCIceberg.init()
   $("#email").focus() if $('.payment_options').length == 0

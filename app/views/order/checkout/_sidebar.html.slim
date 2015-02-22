@@ -8,10 +8,18 @@
   .left-brace-sidebar
     span#summary_product_quantity 1
     | x
-  span#summary_product_price price-float="#{current_tenant.product.price}" = current_tenant.product.human_price
+  span#summary_product_price price-float="#{current_tenant.product.price}"
+    = current_tenant.product.human_price
   hr/
   .left-brace-sidebar
-    span Total:
+    span
+      | Fee:
+  span#summary_fee_price fee-float="#{@payment_options.first.fee}"
+    = @payment_options.first.fee
+  hr/
+  .left-brace-sidebar
+    span
+      | Total:
   span#summary_product_price_total
     | $#{current_product.price}
   br/
