@@ -1,6 +1,8 @@
 .sidebar
-  h5= current_tenant.product.name
-  = image_tag current_tenant.product.product_image ? current_tenant.product.product_image.source.url : nil
+  h5
+    = current_tenant.product.name
+  - if current_product.images.count > 0
+    = image_tag current_product.images.first.source.url(:large_landscape), :class => "sidebar_product_image"
   h5 Order Summary
   hr/
   .left-brace-sidebar

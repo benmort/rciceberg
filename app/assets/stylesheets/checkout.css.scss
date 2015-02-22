@@ -252,6 +252,10 @@
   {
   float: right;
   width: 300px;
+  .sidebar_product_image {
+    width: 100%;
+    margin-bottom: 10px;
+  }
   p
     {
     font-size: 18px;

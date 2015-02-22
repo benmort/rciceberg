@@ -3,6 +3,7 @@ class OrderController < ApplicationController
 
   def index
     # render :text => current_product.to_yaml
+    @posts = Post.all
   end
 
   def checkout

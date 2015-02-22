@@ -1,0 +1,17 @@
+#header
+  .wrapper.clearfix
+    h1#rc_iceberg_header Post
+.gray_background
+  .wrapper
+    - @post.images.each do |image|
+      = image_tag image.source.url(:large_landscape)
+    p
+      b Title:
+      = @post.title
+    p
+      b Content:
+      = @post.content
+    br/
+    = link_to 'Edit', edit_post_path(@post)
+    |  | 
+    = link_to 'Back', products_path

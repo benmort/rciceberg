@@ -1,32 +1,6 @@
 .big_wrapper
   #one.wrapper
     .point_copy
-      h3
-        = current_product.name
       p
         = current_product.description
-      p
-.big_wrapper
-  #two.wrapper
-    .point_copy.right
-      h3
-        | How do I use it?
-      p
-        | Selfstarter is a starting point for you to build your own solution. It is set up to collect reservations using Amazon Payments, but you can choose your own provider too.
-      p
-.big_wrapper
-  #three.wrapper
-    .point_copy
-      h3
-        | It's just a skeleton
-      p
-        | We've kept Selfstarter really simple, but that also means that you should beef it up with your own authentication, administration and product management code.
-      p
-.big_wrapper
-  #four.wrapper
-    .point_copy.right
-      h3
-        | Let's get started
-      p
-        | Most of what you need to get started is in the Readme. Selfstarter is based on Ruby on Rails, and we've tried to break up all of the different parts in a sensible fashion.
-      p
+= render :partial => "order/homepage/posts_list"

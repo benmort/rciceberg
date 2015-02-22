@@ -1,0 +1,16 @@
+.wrapper.clearfix
+  #product_image
+    = image_tag current_product.images.first.source.url(:large_landscape) 
+  #ordering
+    #reserve_container
+      p#price= current_tenant.product.human_price
+      a.blue_button.reserve href="/order/checkout" = Settings.call_to_action
+      p#ship_date= Settings.ships
+      p= Settings.dont_give_them_a_reason_to_say_no
+    ul
+      li#backers.stats
+        = number_with_delimiter Order.completed_orders, :delimiter => ","
+        span ordered
+      li#days.stats
+        = current_tenant.product.stock
+        span left in stock

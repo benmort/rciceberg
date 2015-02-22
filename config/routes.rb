@@ -1,6 +1,7 @@
 Selfstarter::Application.routes.draw do
   devise_for :admins
   resources :products
+  resources :posts
   resources :tenants
 
   root :to => 'order#index'

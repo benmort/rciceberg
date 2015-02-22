@@ -8,13 +8,11 @@ class Product < ActiveRecord::Base
 	include Rails.application.routes.url_helpers
 
 	### PHOTO ALBUM ###
-	has_many :albums, :as => :albumable
-	has_many :album_images, :source => "images", :through => :albums
+  	has_many :images, :as => :imageable
+  	accepts_nested_attributes_for :images, :allow_destroy => true
 
-	has_one :product_image, :class_name => 'ProductImage', dependent: :destroy
 	belongs_to :tenant
-    attr_accessible :name, :description, :price, :stock, :product_image, :product_image_attributes, :source, :tenant_id
-	accepts_nested_attributes_for :product_image, :allow_destroy => true
+    attr_accessible :name, :description, :price, :stock, :images_attributes, :source, :tenant_id
 
 	def human_price
 		return "$"+price.to_s

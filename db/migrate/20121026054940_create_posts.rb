@@ -1,22 +1,9 @@
 class CreatePosts < ActiveRecord::Migration
   def change
     create_table :posts do |t|
-      t.string :uid
-      t.string :permalink
+      t.references  :tenant
       t.string :title
-      t.string :blurb
-      t.text :content
-      t.string :header_image
-      
-      t.string :state
-      t.datetime :published_at
-      
-      t.boolean :visible
-      t.boolean :recommended
-      
-      t.string :uid
-      t.string :permalink
-      
+      t.text :content      
       t.timestamps
     end
   end

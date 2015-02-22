@@ -1,0 +1,9 @@
+#header
+  .wrapper.clearfix
+    h1#rc_iceberg_header Editing post
+.gray_background
+  .wrapper
+    = render 'form'
+    = link_to 'Show', @post
+    |  | 
+    = link_to 'Back', posts_path

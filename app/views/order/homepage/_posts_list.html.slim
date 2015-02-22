@@ -1,0 +1,11 @@
+- iterator = 0
+- @posts.each do |post|
+  - iterator += 1
+  .big_wrapper.post_wrapper
+    .wrapper
+      = image_tag post.images.first.source.url(:large_landscape), :class => ('left' if iterator.even?)
+      div class=('right' if iterator.even?)
+        h3
+          = post.title
+        p
+          = post.content

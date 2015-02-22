@@ -85,16 +85,9 @@ ActiveRecord::Schema.define(version: 20150208103939) do
   end
 
   create_table "posts", force: true do |t|
-    t.string   "uid"
-    t.string   "permalink"
+    t.integer  "tenant_id"
     t.string   "title"
-    t.string   "blurb"
     t.text     "content"
-    t.string   "header_image"
-    t.string   "state"
-    t.datetime "published_at"
-    t.boolean  "visible"
-    t.boolean  "recommended"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

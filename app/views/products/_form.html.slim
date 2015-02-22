@@ -27,9 +27,11 @@
     = f.label :stock
     br/
     = f.text_field :stock
-  = f.fields_for :product_image_attributes do |images_form|
-    .file_field
-      = images_form.file_field :source
+  .field
+    = f.fields_for :images do |images_form|
+      = f.fields_for :product_image_attributes do |images_form|
+      .file_field
+        = images_form.file_field :source, :input_html => {:multiple => true}
   br/
   .actions
     = f.submit

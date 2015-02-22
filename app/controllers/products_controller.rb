@@ -29,6 +29,7 @@ layout 'admin'
   # GET /products/new.xml
   def new
     @product = Product.new
+    @product.images.build
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @product }
@@ -38,6 +39,7 @@ layout 'admin'
   # GET /products/1/edit
   def edit
     @product = Product.find(params[:id])
+    @product.images.build
   end
 
   # product /products
@@ -46,7 +48,7 @@ layout 'admin'
     @product = Product.new(params[:product])
 
     # update the product tenant_id from the selected tenant
-    @product.update(:tenant_id => params[:tenant][:tenant_id])
+    # @product.update(:tenant_id => params[:tenant][:tenant_id])
 
     respond_to do |format|
 
@@ -66,7 +68,7 @@ layout 'admin'
     @product = Product.find(params[:id])
 
     # update the product tenant_id from the selected tenant
-    @product.update(:tenant_id => params[:tenant][:tenant_id])
+    #@product.update(:tenant_id => params[:tenant][:tenant_id])
 
     respond_to do |format|
       if @product.update_attributes(params[:product])

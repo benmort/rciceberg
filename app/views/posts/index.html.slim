@@ -1,0 +1,23 @@
+#header
+  .wrapper.clearfix
+    h1#rc_iceberg_header Posts
+.gray_background
+  .wrapper
+    table.admin_table
+      tr
+        th Title
+        th Tenant ID
+        th Content
+        th
+        th
+        th
+      - @posts.each do |post|
+        tr
+          td= post.title
+          td= post.tenant_id
+          td= post.content
+          td= link_to 'Show', post
+          td= link_to 'Edit', edit_post_path(post)
+          td= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete
+    br/
+    = link_to 'New post', new_post_path
