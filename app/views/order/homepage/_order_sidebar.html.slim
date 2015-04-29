@@ -7,10 +7,8 @@
   #ordering
     #reserve_container
       p.price-container
-        span.currency-symbol
-          '$
         span.price
-          = current_product.price
+          = current_product.human_price
         span.price-suffix
           = Settings.cost_suffix
       a.blue_button.reserve href="/order/checkout"

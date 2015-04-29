@@ -12,6 +12,7 @@ MVP Todo
   * Fix payment gate ways
   * add subscriptions (cycle (days) based instead of just plain monthly)
   * Mobile friendly
+  * Add multiple display text areas
 * Store bought pads/tampons/panty liners
 * Decide on gifts/extras
 * Finalize Name
@@ -63,7 +64,7 @@ Tenant.create :name => "<placeholder>", :domain => "rciceberg.com", :subdomain =
 ```
 * Create a new product in `rails c`:
 ```
-Product.create :name => "Tampons Delivered Monthly", :description => "Our box comes with all you need when you need it most", :price => 19.95, :stock => 100, :tenant_id => 1
+Product.create :name => "T Delivered Monthly", :description => "Our box comes with all you need when you need it most", :price => 19.95, :stock => 9999999, :tenant_id => 1, :description_two => "Description two"
 ```
 * Run `rails server`
 * Hit `dev.rciceberg.com:3000` to test
