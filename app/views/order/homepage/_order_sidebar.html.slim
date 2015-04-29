@@ -4,13 +4,16 @@
     / = image_tag current_product.images.first.source.url(:large_landscape)
   #ordering
     #reserve_container
-      p#price
-        = current_tenant.product.human_price
+      p.price-container
+        span.currency-symbol
+          '$
+        span.price
+          = current_product.price
       a.blue_button.reserve href="/order/checkout"
         = Settings.call_to_action
       p#ship_date= Settings.ships
       p
-        = Settings.warrenty_message
+        = Settings.warranty_message
     ul
       li#backers.stats
         = number_with_delimiter Order.completed_orders, :delimiter => ","

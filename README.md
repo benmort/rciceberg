@@ -1,4 +1,4 @@
-RC Iceberg
+<placeholder for name>
 ====
 
 Setup:
@@ -10,11 +10,35 @@ Setup:
 * Add a hosts file entry for `dev.rciceberg.com` to point to `127.0.0.1` and `0.0.0.0`
 * Run `rails c` then run this command in the Rails dev console:
 ```
-Tenant.create :name => "iceberg", :domain => "rciceberg.com", :subdomain => "dev"
+Tenant.create :name => "<placeholder>", :domain => "rciceberg.com", :subdomain => "dev"
 ```
 * Create a new product in `rails c`:
 ```
-Product.create :name => "Test", :description => "test product desc", :price => 19.95, :stock => 100
+Product.create :name => "Test", :description => "test product desc", :price => 19.95, :stock => 100, :tenant_id => 1
 ```
 * Run `rails server`
 * Hit `dev.rciceberg.com:3000` to test
+
+Todo
+===
+* Remove number of ordered/stock
+* Remove cost
+* Update feel
+* Update colours
+* Remove Warranty (maybe add "privacy guarenteed")
+* Add Sales pitch
+* Add pictures (chocolates on right side)
+
+Name ideas?
+===
+Monthly Club
+Monthly Best Friend
+
+Marketing Ideas
+===
+Social Media
+
+Target Audience
+===
+Mid to Late Teenage Girls
+Mothers to girls

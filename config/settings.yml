@@ -17,6 +17,9 @@ use_payment_options: true
 # this value will be added to the price to create a charge limit
 charge_limit: 25.00
 
+# TODO: use this
+currency: "AUD"
+
 # Stats settings
 primary_stat: "orders"
 
@@ -24,17 +27,17 @@ primary_stat: "orders"
 primary_stat_verb: 'order'
 
 # The 2nd call to action button
-middle_reserve_text: "Order Now"
+middle_reserve_text: "Get Started"
 
-# Call to action section
+top_sales_pitch: "Tampons delivered monthly"
 
+### Call to action section
 # Text for user to see about shipping, for example: "Ships within 48 hours"
-ships: "Ships Next Day"
+ships: "Arrives before it's too late"
 
-call_to_action: "Order Now"
+call_to_action: "Get Started"
 
-# The paragraph below the price. You'd probably say something about how you're not going to charge them before it ships (so it's less risky).
-warrenty_message: "Satisfaction guaranteed with a limited warranty."
+warranty_message: "Privacy guaranteed"
 
 # Social Stuff
 facebook_app_id: "1234567890"
