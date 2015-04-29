@@ -14,8 +14,9 @@
   .left-brace-sidebar
     span
       | Fee:
-  span#summary_fee_price fee-float="#{@payment_options.first.fee}"
-    = @payment_options.first.fee
+  - if @payment_options.count > 0
+    span#summary_fee_price fee-float="#{@payment_options.first.fee}"
+      = @payment_options.first.fee
   hr/
   .left-brace-sidebar
     span

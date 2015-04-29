@@ -1,7 +1,8 @@
 .wrapper.clearfix
   #product_image
     / this is broke because current product has no image
-    / = image_tag current_product.images.first.source.url(:large_landscape)
+    - if current_product.images.count > 0
+      = image_tag current_product.images.first.source.url(:large_landscape)
   #ordering
     #reserve_container
       p.price-container
