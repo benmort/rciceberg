@@ -63,7 +63,7 @@ Tenant.create :name => "<placeholder>", :domain => "rciceberg.com", :subdomain =
 ```
 * Create a new product in `rails c`:
 ```
-Product.create :name => "Test", :description => "test product desc", :price => 19.95, :stock => 100, :tenant_id => 1
+Product.create :name => "Tampons Delivered Monthly", :description => "Our box comes with all you need when you need it most", :price => 19.95, :stock => 100, :tenant_id => 1
 ```
 * Run `rails server`
 * Hit `dev.rciceberg.com:3000` to test
