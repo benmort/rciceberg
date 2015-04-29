@@ -10,7 +10,7 @@ MVP Todo
   * Add pictures (chocolates on right side)
   * Mention the gifts in the sales pitch
   * Fix payment gate ways
-  * add subscriptions
+  * add subscriptions (cycle (days) based instead of just plain monthly)
   * Mobile friendly
 * Store bought pads/tampons/panty liners
 * Decide on gifts/extras
