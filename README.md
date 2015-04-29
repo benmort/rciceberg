@@ -21,24 +21,22 @@ Product.create :name => "Test", :description => "test product desc", :price => 1
 
 Todo
 ===
-* Remove number of ordered/stock
-* Remove cost
 * Update feel
 * Update colours
-* Remove Warranty (maybe add "privacy guarenteed")
-* Add Sales pitch
+* Update Sales pitch
 * Add pictures (chocolates on right side)
+* Mention the gifts
 
 Name ideas?
 ===
-Monthly Club
-Monthly Best Friend
+* Monthly Club
+* Monthly Best Friend
 
 Marketing Ideas
 ===
-Social Media
+* Social Media
 
 Target Audience
 ===
-Mid to Late Teenage Girls
-Mothers to girls
+* Mid to Late Teenage Girls
+* Mothers to girls
