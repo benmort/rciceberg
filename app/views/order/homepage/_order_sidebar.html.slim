@@ -1,6 +1,7 @@
 .wrapper.clearfix
   #product_image
     / this is broke because current product has no image
+    / put product picture here pls :)
     - if current_product.images.count > 0
       = image_tag current_product.images.first.source.url(:large_landscape)
   #ordering
