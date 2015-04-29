@@ -10,17 +10,10 @@
           '$
         span.price
           = current_product.price
+        span.price-suffix
+          = Settings.cost_suffix
       a.blue_button.reserve href="/order/checkout"
         = Settings.call_to_action
       p#ship_date= Settings.ships
       p
         = Settings.warranty_message
-    ul
-      li#backers.stats
-        = number_with_delimiter Order.completed_orders, :delimiter => ","
-        span
-          | ordered
-      li#days.stats
-        = current_tenant.product.stock
-        span
-          | left in stock

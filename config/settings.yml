@@ -29,11 +29,11 @@ primary_stat_verb: 'order'
 # The 2nd call to action button
 middle_reserve_text: "Get Started"
 
-top_sales_pitch: "Tampons delivered monthly"
+cost_suffix: "per cycle"
 
 ### Call to action section
 # Text for user to see about shipping, for example: "Ships within 48 hours"
-ships: "Arrives before it's too late"
+ships: "Arrives before you need it most"
 
 call_to_action: "Get Started"
 
