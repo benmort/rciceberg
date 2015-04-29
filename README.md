@@ -1,4 +1,4 @@
-<placeholder for name>
+[placeholder for name]
 ====
 
 Setup:
