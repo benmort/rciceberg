@@ -29,7 +29,9 @@ class OrderController < ApplicationController
     callback_url = "#{request.scheme}://#{request.host}#{port}/order/postfill"
 
     if payment_option_name == 'paypal'
-      self.paypal_payment
+      # also need to check if the current product subscription mode is true
+      # which will need to be another entry into the product database table
+      self.subscription_paypal_payment
     elsif payment_option_name == 'amazon'
       redirect_to AmazonFlexPay.multi_use_pipeline(
         @order.uuid,
@@ -43,32 +45,36 @@ class OrderController < ApplicationController
 
   end
 
-  def paypal_payment
-    Paypal.sandbox! if Rails.env.development?
+  def subscription_paypal_payment
+    # Paypal.sandbox! if Rails.env.development?
+    # Paypal.sandbox!
 
     request = Paypal::Express::Request.new(
       :username   => Settings.paypal_username,
       :password   => Settings.paypal_password,
-      :signature  => Settings.paypal_signature
+      :signature  => Settings.paypal_signature,
+      :subject =>  current_product.name
     )
 
 
     payment_request = Paypal::Payment::Request.new(
-      # if nil, PayPal use USD as default
-      :currency_code => Settings.currency,
+      :currency_code => :AUD, # if nil, PayPal use USD as default
       :billing_type  => :RecurringPayments,
-      :billing_agreement_description => current_product.name
+      :billing_agreement_description => current_product.name,
+      :amount => Paypal::Payment::Common::Amount.new(
+        :total => current_product.price
+      )
     )
+
+    # abort payment_request.to_yaml
 
     response = request.setup(
       payment_request,
-      # success callback URL
-      url_for('/'),
-      # url_for(:controller => 'orders', :id => current_product.id),
-      # cancel callback URL
-      url_for('/checkout')
-      # url_for(:controller => 'orders', :id => current_product.id)
+      '/YOUR_SUCCESS_CALBACK_URL',
+      '/YOUR_CANCEL_CALBACK_URL'
     )
+
+    abort response.to_yaml
     response.redirect_uri
   end
 

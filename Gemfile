@@ -36,6 +36,9 @@ gem 'jquery-ui-rails'
 # Paypal Express Payments
 gem 'paypal-express'
 
+# Was using this to test
+# gem 'paypal-sdk-rest'
+
 # Kickstarter's awesome Amazon Flexible Payments gem
 gem 'amazon_flex_pay'
 
