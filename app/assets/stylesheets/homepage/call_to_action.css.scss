@@ -1,19 +1,18 @@
-#reserve_container
-{
+#reserve_container {
   float: left;
   padding-top: 20px;
   text-align: center;
-  border-bottom: 1px solid #cbcbcb;
+  // border-bottom: 1px solid #cbcbcb;
   padding-bottom: 15px;
   margin-bottom: 15px;
-  p
-  {
+
+  p {
     color: #8b8a8a;
     font-size: 18px;
     line-height: 1.4;
   }
-  #ship_date
-  {
+
+  #ship_date {
     color: #4c4c4c;
     font-size: 22px;
     font-family: $primary_font, $secondary_font, $tertiary_font;
@@ -22,8 +21,8 @@
     margin: 0 auto;
     width: 300px;
   }
-  #price
-  {
+
+  .price-container {
     color: #4c4c4c;
     font-size: 35px;
     font-weight: bold;
@@ -33,9 +32,18 @@
     margin: 0 auto 10px auto;
     width: 300px;
   }
+
+  .price-suffix {
+    font-weight: normal;
+    line-height: 1;
+    margin: 0;
+    font-size: 15px;
+    padding-left: 5px;
+    font-style: italic;
+  }
 }
-.reserve
-{
+
+.reserve {
   margin: 0 auto;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -44,11 +52,10 @@
   font-size: 32px;
 }
 
-#middle_reserve
-{
+#middle_reserve {
   padding: 60px;
-  h2
-  {
+
+  h2 {
     margin-bottom: 26px;
   }
 }
