@@ -20,12 +20,8 @@ MVP Todo
 
 Business Todo
 ===
-* Partnership Agreement
-* Equity Split
 * Bank Account?
-* ABN?
-* Business Name?
-  * for all of the above, can we use RCIceberg?
+* Business Name (if we want to be a different name for Tbox)
 
 Long Term Todo
 ===
