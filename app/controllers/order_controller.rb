@@ -29,17 +29,47 @@ class OrderController < ApplicationController
     callback_url = "#{request.scheme}://#{request.host}#{port}/order/postfill"
 
     if payment_option_name == 'paypal'
+      self.paypal_payment
     elsif payment_option_name == 'amazon'
       redirect_to AmazonFlexPay.multi_use_pipeline(
         @order.uuid,
         callback_url,
-        :transaction_amount => price,
-        :global_amount_limit => price + Settings.charge_limit,
+        :transaction_amount => current_product.price,
+        :global_amount_limit => current_product.price + Settings.charge_limit,
         :collect_shipping_address => "True",
         :payment_reason => current_product.name
       )
     end
 
+  end
+
+  def paypal_payment
+    Paypal.sandbox! if Rails.env.development?
+
+    request = Paypal::Express::Request.new(
+      :username   => Settings.paypal_username,
+      :password   => Settings.paypal_password,
+      :signature  => Settings.paypal_signature
+    )
+
+
+    payment_request = Paypal::Payment::Request.new(
+      # if nil, PayPal use USD as default
+      :currency_code => Settings.currency,
+      :billing_type  => :RecurringPayments,
+      :billing_agreement_description => current_product.name
+    )
+
+    response = request.setup(
+      payment_request,
+      # success callback URL
+      url_for('/'),
+      # url_for(:controller => 'orders', :id => current_product.id),
+      # cancel callback URL
+      url_for('/checkout')
+      # url_for(:controller => 'orders', :id => current_product.id)
+    )
+    response.redirect_uri
   end
 
   def postfill

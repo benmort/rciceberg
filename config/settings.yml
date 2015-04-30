@@ -3,9 +3,9 @@ amazon_access_key: "XXXX"
 amazon_secret_key: "XXXX"
 
 # Paypal settings
-paypal_username: "XXXX"
-paypal_password: "XXXX"
-paypal_signature: "XXXX"
+paypal_username: "email.scottwarren-facilitator-1@gmail.com"
+paypal_password: "5ZYX3HAT8SJNJE3G"
+paypal_signature: "AONvBizf3qQmVXhvK4efUMiG09B9AAycyHdyOATZ9LabW4OG4lOm-PVC"
 
 # if use_payment_options is set to true, then a set of radio buttons will be displayed with various payment options.
 # There is a PaymentOption model for storing info about payment options.  To set up your payment options you should
@@ -17,7 +17,7 @@ use_payment_options: true
 # this value will be added to the price to create a charge limit
 charge_limit: 25.00
 
-# TODO: use this
+# This is used in the Paypal checkout process
 currency: "AUD"
 
 # Stats settings

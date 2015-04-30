@@ -1,5 +1,7 @@
+Paypal.sandbox! if Rails.env.development?
+
 request = Paypal::Express::Request.new(
-  :username   => 'username',
-  :password   => 'password',
-  :signature  => 'SET_YOUR_OWN'
+  :username   => Settings.paypal_username,
+  :password   => Settings.paypal_password,
+  :signature  => Settings.paypal_signature
 )
