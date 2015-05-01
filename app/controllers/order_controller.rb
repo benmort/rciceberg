@@ -46,7 +46,7 @@ class OrderController < ApplicationController
   end
 
   def subscription_paypal_payment
-    # Paypal.sandbox! if Rails.env.development?
+    Paypal.sandbox! if Rails.env.development?
     # Paypal.sandbox!
 
     request = Paypal::Express::Request.new(
