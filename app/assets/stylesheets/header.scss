@@ -1,0 +1,22 @@
+header {
+  .purchase {
+    background: #5bc0de;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+
+    &:hover {
+      background: #39b3d7;
+      text-decoration: none;
+    }
+
+    &:active {
+      box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    }
+  }
+
+  .btn.more-site-btn {
+    margin-top: 20px;
+    // border: none;
+  }
+}

@@ -223,7 +223,7 @@ input, textarea {
 	}
 }
 
-#more-site {
+.more-site-btn {
 	margin-top: 50px;
 	border: 1px solid #fff;
 	color: #fff;
@@ -249,7 +249,7 @@ input, textarea {
 
 #site-meta i,
 #site-description,
-#more-site {
+.more-site-btn {
 	position: relative;
 
 	.only-on-home & {

@@ -6858,7 +6858,7 @@ input, textarea {
   margin-top: 90px;
 }
 
-#more-site {
+.more-site-btn {
   margin-top: 50px;
   border: 1px solid #fff;
   color: #fff;
@@ -6867,28 +6867,28 @@ input, textarea {
   display: none;
   background: transparent;
 }
-#more-site:hover {
+.more-site-btn:hover {
   background: rgba(0, 0, 0, 0.1);
   border-color: #fff;
   color: #fff;
 }
-.only-on-home #more-site {
+.only-on-home .more-site-btn {
   display: inline-block;
 }
 @media (max-width: 600px) {
-  #more-site {
+  .more-site-btn {
     display: none !important;
   }
 }
 
 #site-meta i,
 #site-description,
-#more-site {
+.more-site-btn {
   position: relative;
 }
 .only-on-home #site-meta i, .only-on-home
 #site-description, .only-on-home
-#more-site {
+.more-site-btn {
   -webkit-animation: fadeHeader 1 1s ease-in;
   -moz-animation: fadeHeader 1 1s ease-in;
   -o-animation: fadeHeader 1 1s ease-in;

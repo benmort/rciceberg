@@ -16,4 +16,3 @@
 //= require header-banner-init
 //= require jquery.arctext
 //= require theme.js
-//= require_tree .
