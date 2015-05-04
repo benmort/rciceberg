@@ -47,6 +47,9 @@ gem 'rails_12factor'
 
 gem 'protected_attributes'
 
+#awesomeness
+gem 'kaminari'
+
 # image processing
 gem "paperclip", "~> 4.2"
 
