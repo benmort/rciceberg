@@ -12,7 +12,7 @@ class Product < ActiveRecord::Base
   	accepts_nested_attributes_for :images, :allow_destroy => true
 
 	belongs_to :tenant
-    attr_accessible :name, :description, :price, :stock, :images_attributes, :source, :tenant_id
+    attr_accessible :name, :description, :description_two, :price, :stock, :images_attributes, :source, :tenant_id
 
 	def human_price
 		return "$"+price.to_s

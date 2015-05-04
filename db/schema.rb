@@ -94,6 +94,7 @@ ActiveRecord::Schema.define(version: 20150208103939) do
     t.integer  "tenant_id"
     t.string   "name"
     t.text     "description"
+    t.text     "description_two"
     t.float    "price"
     t.integer  "stock"
     t.datetime "created_at"

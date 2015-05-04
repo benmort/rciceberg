@@ -11,7 +11,7 @@ end
 
 group :production do
   # postgresql
-  gem 'pg'
+  # gem 'pg'
   gem 'thin'
 end
 
