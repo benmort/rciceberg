@@ -55,3 +55,11 @@ gem 'devise'
 
 # slim templates
 gem 'slim'
+
+# prd server
+gem 'unicorn'
+
+# deployment
+gem 'mina'
+gem 'mina-sidekiq', :require => false
+gem 'mina-unicorn', :require => false

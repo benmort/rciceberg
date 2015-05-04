@@ -20,3 +20,8 @@
     font-size: 18px;
   }
 }
+body[china-location=true] {
+  .footer a {
+    font-family: 'Noto Sans';
+  }
+}
