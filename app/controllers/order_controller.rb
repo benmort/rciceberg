@@ -43,39 +43,75 @@ class OrderController < ApplicationController
       )
     end
 
-  end
+  end[]
 
   def subscription_paypal_payment
     Paypal.sandbox! if Rails.env.development?
-    # Paypal.sandbox!
+
+
+
+
+    paypal_options = {
+      no_shipping: false, # if you want to disable shipping information
+      allow_note: false, # if you want to disable notes
+      pay_on_paypal: true # if you don't plan on showing your own confirmation step
+    }
 
     request = Paypal::Express::Request.new(
       :username   => Settings.paypal_username,
       :password   => Settings.paypal_password,
-      :signature  => Settings.paypal_signature,
-      :subject =>  current_product.name
+      :signature  => Settings.paypal_signature
     )
-
-
     payment_request = Paypal::Payment::Request.new(
-      :currency_code => :AUD, # if nil, PayPal use USD as default
-      :billing_type  => :RecurringPayments,
-      :billing_agreement_description => current_product.name,
-      :amount => Paypal::Payment::Common::Amount.new(
-        :total => current_product.price
-      )
+      :currency_code => :AUD,   # if nil, PayPal use USD as default
+      :description   => 'FOO',    # item description
+      :quantity      => 1,      # item quantity
+      :amount        => 1.00,   # item value
+      :custom_fields => {
+        CARTBORDERCOLOR: "C00000",
+        LOGOIMG: "https://example.com/logo.png"
+      }
     )
-
-    # abort payment_request.to_yaml
-
     response = request.setup(
       payment_request,
-      '/YOUR_SUCCESS_CALBACK_URL',
-      '/YOUR_CANCEL_CALBACK_URL'
+      '/success',
+      '/fail',
+      paypal_options  # Optional
     )
-
-    abort response.to_yaml
     response.redirect_uri
+
+
+
+    # Paypal.sandbox!
+
+    # request = Paypal::Express::Request.new(
+    #   :username   => Settings.paypal_username,
+    #   :password   => Settings.paypal_password,
+    #   :signature  => Settings.paypal_signature,
+    #   :signature  => "",
+    #   :subject =>  current_product.name
+    # )
+
+
+    # payment_request = Paypal::Payment::Request.new(
+    #   :currency_code => :AUD, # if nil, PayPal use USD as default
+    #   :billing_type  => :RecurringPayments,
+    #   :billing_agreement_description => current_product.name,
+    #   :amount => Paypal::Payment::Common::Amount.new(
+    #     :total => current_product.price
+    #   )
+    # )
+
+    # # abort payment_request.to_yaml
+
+    # response = request.setup(
+    #   payment_request,
+    #   '/YOUR_SUCCESS_CALBACK_URL',
+    #   '/YOUR_CANCEL_CALBACK_URL'
+    # )
+
+    # abort response.to_yaml
+    # response.redirect_uri
   end
 
   def postfill
