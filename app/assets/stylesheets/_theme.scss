@@ -1,3 +1,5 @@
+@import "variables";
+
 $col_text: #282828;
 $col_highlight: #5cbde0;
 
@@ -186,7 +188,7 @@ input, textarea {
 		width: 100%;
 
 		.basic & {
-			font-family: 'Megrim', cursive;
+			font-family: $fancy-font;
 		}
 
 		.only-on-home.no-fittext & {

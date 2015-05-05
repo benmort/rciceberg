@@ -1,3 +1,5 @@
+@import "variables";
+
 article,
 aside,
 details,
@@ -6780,7 +6782,7 @@ input, textarea {
 }
 
 #site-title {
-  font-family: Megrim, sans-serif;
+  font-family: $fancy-font;
   margin: 0;
 }
 .no-fittext #site-title {
@@ -6793,7 +6795,7 @@ input, textarea {
   width: 100%;
 }
 .basic #site-title a {
-  font-family: 'Megrim', cursive;
+  font-family: $fancy-font;
 }
 .only-on-home.no-fittext #site-title a {
   font-size: 120px;
