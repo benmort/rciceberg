@@ -1,5 +1,7 @@
+@import "variables";
+
 $col_text: #282828;
-$col_highlight: #5cbde0;
+$col_highlight: $site-highlight-color;
 
 $font_main_text: Open Sans, sans-serif;
 $font_headers: Raleway, sans-serif;
@@ -28,7 +30,7 @@ body {
 	}
 
 	a {
-		color: #428BCA;
+		color: $site-highlight-color;
 
 		&.btn {
     	    color: #fff;
@@ -39,7 +41,7 @@ body {
 		}
 
 		&:hover {
-			color: #2A6496;
+			color: $site-highlight-hover-color;
 		}
 	}
 }
@@ -186,7 +188,7 @@ input, textarea {
 		width: 100%;
 
 		.basic & {
-			font-family: 'Megrim', cursive;
+			font-family: $fancy-font;
 		}
 
 		.only-on-home.no-fittext & {
@@ -223,7 +225,7 @@ input, textarea {
 	}
 }
 
-#more-site {
+.more-site-btn {
 	margin-top: 50px;
 	border: 1px solid #fff;
 	color: #fff;
@@ -249,7 +251,7 @@ input, textarea {
 
 #site-meta i,
 #site-description,
-#more-site {
+.more-site-btn {
 	position: relative;
 
 	.only-on-home & {
@@ -511,7 +513,7 @@ input, textarea {
 
 /* =Home Widgets
 -------------------------------------------------------------- */
-#home-page-widgets {
+#features {
 	padding: 60px 0 40px;
 	background: #F7F7F7;
 
@@ -565,8 +567,8 @@ input, textarea {
 		}
 
 		&.primary {
-			color: #428bca;
-			border-color: #428bca;
+			color: $site-highlight-color;
+			border-color: $site-highlight-color;
 		}
 
 		&.danger {
@@ -1015,7 +1017,7 @@ iframe {
 #infinite-handle span {
 	@include border-radius(3px);
 
-	background: #428BCA;
+	background: $site-highlight-color;
 	color: #fff;
 	width: 160px;
 	margin: auto;

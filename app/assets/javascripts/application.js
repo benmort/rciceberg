@@ -10,10 +10,10 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
+//= require_self
 //= require jquery-1.11.3.min
 //= require bootstrap.min
-//= require fillsize.js
+//= require fillsize
 //= require header-banner-init
 //= require jquery.arctext
-//= require theme.js
-//= require_tree .
+//= require theme
