@@ -1,12 +1,14 @@
+@import "variables";
+
 header {
   .purchase {
-    background: #5bc0de;
+    background: $site-highlight-color;
     border: none;
     border-radius: 5px;
     color: #fff;
 
     &:hover {
-      background: #39b3d7;
+      background: $site-highlight-hover-color;
       text-decoration: none;
     }
 

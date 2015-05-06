@@ -1,7 +1,7 @@
 @import "variables";
 
 $col_text: #282828;
-$col_highlight: #5cbde0;
+$col_highlight: $site-highlight-color;
 
 $font_main_text: Open Sans, sans-serif;
 $font_headers: Raleway, sans-serif;
@@ -30,7 +30,7 @@ body {
 	}
 
 	a {
-		color: #428BCA;
+		color: $site-highlight-color;
 
 		&.btn {
     	    color: #fff;
@@ -41,7 +41,7 @@ body {
 		}
 
 		&:hover {
-			color: #2A6496;
+			color: $site-highlight-hover-color;
 		}
 	}
 }
@@ -567,8 +567,8 @@ input, textarea {
 		}
 
 		&.primary {
-			color: #428bca;
-			border-color: #428bca;
+			color: $site-highlight-color;
+			border-color: $site-highlight-color;
 		}
 
 		&.danger {
@@ -1017,7 +1017,7 @@ iframe {
 #infinite-handle span {
 	@include border-radius(3px);
 
-	background: #428BCA;
+	background: $site-highlight-color;
 	color: #fff;
 	width: 160px;
 	margin: auto;
