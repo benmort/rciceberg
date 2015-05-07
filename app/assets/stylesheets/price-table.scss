@@ -14,11 +14,11 @@
     line-height: 1.625em;
   }
 
-  .plans {
+  &.plans {
     background: $price-table-background;
   }
 
-  .layer {
+  &.layer {
     clear: both;
     width: 100%;
     height: auto;
