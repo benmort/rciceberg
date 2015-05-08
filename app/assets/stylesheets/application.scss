@@ -9,11 +9,14 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require reset
+ *= require base
  *= require buttons
  *= require header
  *= require style
  *= require font-awesome
  *= require vbox
+ *= require price-table
  */
 .hidden
 {
