@@ -18,4 +18,4 @@
 //= require header-banner-init
 //= require jquery.arctext
 //= require theme
-//= require plugins
+//= require payment-form
