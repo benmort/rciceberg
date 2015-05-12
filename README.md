@@ -1,33 +1,22 @@
-[placeholder for name]
+VBox -> Name to change
 ====
 
 MVP Todo
 ===
-* Finish Website
-  * Update feel
-  * Update colours
-  * Update Sales pitch
-  * Add pictures (chocolates on right side)
-  * Mention the gifts in the sales pitch
-  * Fix payment gate ways
-  * add subscriptions (cycle (days) based instead of just plain monthly)
-  * Mobile friendly
-  * Add multiple display text areas
-* Store bought pads/tampons/panty liners
-* Decide on gifts/extras
+* Fix payment gate ways (see issue [#24](https://github.com/benmort/rciceberg/issues/24))
+* Orders dashboard
 * Finalize Name
-* Subscription (cycle (days) based instead of just plain monthly)
 
 Business Todo
 ===
-* Bank Account?
-* Business Name (if we want to be a different name for Tbox)
+* Business Name - for "Trading as" - this will need to be added to the partnership
 
 Long Term Todo
 ===
 * App with cycle tracker
 * Branded tampons/pads/panty liners
 * Move towards organic and sustainable products "good for you and the environment"
+* add subscriptions (cycle (days) based instead of just plain monthly)
 
 Name ideas?
 ===
@@ -39,12 +28,11 @@ Marketing Ideas
 * Social Media, specifically:
   * Instagram and Facebook ads
   * Set up an account on both sharing daily "goss"
-* Talk to Kyle to see if we can advertise on his site, depending on demographic
 
 Target Audience
 ===
 * Mid to Late Teenage Girls
-* Mothers to girls
+* Mothers to their daughters girls
 
 Setup
 ===
