@@ -1,5 +1,10 @@
 .purchase {
   font-size: 20px;
+
+  &:focus {
+    color: #fff;
+    text-decoration: none;
+  }
 }
 
 .home-jumbotron .btn.purchase {
