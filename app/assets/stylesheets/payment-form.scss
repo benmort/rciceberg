@@ -10,6 +10,7 @@
   .submit {
     background-color: $site-highlight-color;
   }
+
   .checkout {
     max-width: 400px;
     margin: 50px auto;
@@ -19,7 +20,9 @@
     border-color: #c2cadb #bbc5d6 #b7c0cd;
     border-radius: 7px;
 
-    input {
+    input,
+    select {
+      margin: 5px 0;
       width: 100%;
     }
 
@@ -32,13 +35,14 @@
   }
 
   .checkout-title {
-    padding: 0 15px;
-    line-height: 38px;
-    font-size: 14px;
+    padding: 15px 15px;
+    padding-bottom: 5px;
+    line-height: 25px;
+    font-size: 16px;
     font-weight: bold;
     color: #555555;
     text-shadow: 0 1px rgba(white, .7);
-    background: #eceff5;
+    background: #e9eaee;
     border-bottom: 1px solid #c5ccdb;
     border-radius: 7px 7px 0 0;
     margin: 0;
@@ -53,7 +57,9 @@
     }
 
     p {
+      font-size: 15px;
       font-weight: normal;
+      color: #777777;
     }
   }
 
