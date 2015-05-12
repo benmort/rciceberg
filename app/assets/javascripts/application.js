@@ -13,7 +13,9 @@
 //= require_self
 //= require jquery-1.11.3.min
 //= require bootstrap.min
+//= require vendor/jquery.leanModal.min
 //= require fillsize
 //= require header-banner-init
 //= require jquery.arctext
 //= require theme
+//= require plugins
