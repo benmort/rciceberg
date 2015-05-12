@@ -1,8 +1,10 @@
 doctype html
-html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"
+html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" 
   head
     meta content=("text/html; charset=utf-8") http-equiv="Content-Type" /
-    title= current_tenant.name
+    title
+      = current_tenant.name
+    link rel="icon" type="image/png" href="/empty-cart-dark.png"
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
   /![if lt IE 9 ] <body class="lt-ie9"
@@ -10,7 +12,5 @@ html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"
   body
     /! <![endif]
     = render 'order/header'
-    .gray_background
-      .wrapper.center
-        = yield
+    = yield
     = render 'order/footer'
