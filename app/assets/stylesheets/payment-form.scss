@@ -3,11 +3,15 @@
 .payment {
   display: none;
 
+  .sorry {
+    font-style: italic;
+  }
+
   .submit {
     background-color: $site-highlight-color;
   }
   .checkout {
-    width: 270px;
+    max-width: 400px;
     margin: 50px auto;
     padding: 15px;
     background: #f3f6fa;
@@ -15,9 +19,10 @@
     border-color: #c2cadb #bbc5d6 #b7c0cd;
     border-radius: 7px;
 
-    > p {
-      // @include clearfix;
+    input {
+      width: 100%;
     }
+
     > p + p { margin-top: 15px; }
   }
 
@@ -29,14 +34,14 @@
   .checkout-title {
     padding: 0 15px;
     line-height: 38px;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: bold;
-    color: #7f889e;
+    color: #555555;
     text-shadow: 0 1px rgba(white, .7);
     background: #eceff5;
     border-bottom: 1px solid #c5ccdb;
     border-radius: 7px 7px 0 0;
-    // @include linear-gradient(top, #f5f8fb, #e9edf3);
+    margin: 0;
 
     &:before {
       content: '';
@@ -45,6 +50,10 @@
       left: 0;
       right: 0;
       height: 2px;
+    }
+
+    p {
+      font-weight: normal;
     }
   }
 
@@ -63,8 +72,6 @@
     border: 1px solid;
     border-color: #b33323 #ab3123 #982b1f;
     border-radius: 21px;
-    // @include user-select(none);
-    // @include linear-gradient(top, #f75a3b, #d63b29);
 
     &:before {
       content: '';
@@ -83,7 +90,6 @@
     line-height: normal;
     font-family: inherit;
     font-size: 100%;
-    // @include box-sizing(border-box);
   }
 
   .checkout-input {
@@ -95,7 +101,6 @@
     border: 1px solid;
     border-color: #b3c0e2 #bcc5e2 #c0ccea;
     border-radius: 4px;
-    // @include linear-gradient(top, #f6f8fa, white);
 
     &:focus {
       border-color: #46aefe;
@@ -126,12 +131,10 @@
     border-color: #1486f9 #0f7de9 #0d6acf;
     background: #1993fb;
     border-radius: 4px;
-    // @include linear-gradient(top, #4cb1fe, #229afc 40%, #138df6);
 
     &:active {
       text-shadow: 0 1px 1px rgba(black, .2);
       border-color: #075bba #0c69d2 #0f7de9;
-      // @include linear-gradient(top, #1281dc, #1593fc);
     }
   }
 }

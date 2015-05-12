@@ -2,7 +2,9 @@
 form.payment-form.checkout
   fieldset
     .checkout-header
-      h1.checkout-title Hello!
+      h1.checkout-title
+        | Complete your order
+        p plan type here: $price
     = render 'payment/credit_card_form'
     = render 'payment/address_form'
     button.submit.pure-button.pure-button-primary type="submit" Purchase

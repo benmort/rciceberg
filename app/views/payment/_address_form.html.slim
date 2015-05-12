@@ -1,6 +1,17 @@
 .address
-  input.address
-  input.city
-  input.postcode
-  input.state
-  input.country
+  input.address placeholder="Street"
+  input.city placeholder="City"
+  input.postcode placeholder="Postcode"
+  select.state.form-control
+    option value="ACT" Australian Capital Territory
+    option value="NSW" New South Wales
+    option value="NT" Northern Territory
+    option value="QLD" Queensland
+    option value="SA" South Australia
+    option value="TAS" Tasmania
+    option value="VIC" Victoria
+    option value="WA" Western Australia
+  p.sorry
+    | Sorry, we currently only ship to Australia
+  select.country.form-control
+    option value="AU" Australia
