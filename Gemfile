@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.1.3'
+ruby '2.1.2'
 
 gem 'rails', '4.0.0'
 gem 'json', '~> 1.7.7'
@@ -46,6 +46,9 @@ gem 'rails_config'
 gem 'rails_12factor'
 
 gem 'protected_attributes'
+
+#awesomeness
+gem 'kaminari'
 
 # image processing
 gem "paperclip", "~> 4.2"
