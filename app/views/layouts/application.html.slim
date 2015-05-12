@@ -2,28 +2,11 @@ doctype html
 html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"
   head
     link href="http://fonts.googleapis.com/css?family=Megrim|Open+Sans:400,700" rel="stylesheet" type="text/css"
+    link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css"
     meta content=("text/html; charset=utf-8") http-equiv="Content-Type" /
     title
       = current_tenant.name
     link rel="icon" type="image/png" href="/empty-cart-dark.png"
-    /! start Memberful JS
-    javascript:
-      window.MemberfulOptions = {site: "https://rciceberg.memberful.com"};
-
-      (function() {
-        var s   = document.createElement('script');
-
-        s.type  = 'text/javascript';
-        s.async = true;
-        s.src   = 'https://d35xxde4fgg0cx.cloudfront.net/assets/embedded.js';
-
-        setup = function() { window.MemberfulEmbedded.setup(); }
-
-        if(s.addEventListener) { s.addEventListener("load", setup, false); } else { s.attachEvent("onload", setup); }
-
-        ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
-      })();
-    /! end Memberful JS
     = stylesheet_link_tag    "application"
   body.home.page.page-id-147.page-template.page-template-page-templates.page-template-template-post-block.page-template-page-templatestemplate-post-block-php.only-on-home.no-fittext
     /! <![endif]

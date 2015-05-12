@@ -11,12 +11,14 @@
  *= require_self
  *= require reset
  *= require base
+ *= require plugins
  *= require buttons
  *= require header
  *= require style
  *= require font-awesome
  *= require vbox
  *= require price-table
+ *= require payment-form
  */
 .hidden
 {

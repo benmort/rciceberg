@@ -1,0 +1,10 @@
+@import 'variables';
+
+.payment {
+  display: none;
+  // margin: 0 auto;
+
+  .submit {
+    background-color: $site-highlight-color;
+  }
+}
