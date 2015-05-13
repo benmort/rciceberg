@@ -1,5 +1,4 @@
-/ form.payment-form.pure-form.pure-form-aligned.checkout
-form.payment-form.checkout
+= form_tag({ controller: "order", action: "subscribe", method: "post" }, {class: "payment-form checkout"})
   fieldset
     .checkout-header
       h1.checkout-title

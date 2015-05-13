@@ -10,6 +10,24 @@ class OrderController < ApplicationController
     @payment_options = PaymentOption.ordered
   end
 
+  def subscribe
+    if params[:credit_card_payment]
+      self.credit_card
+    end
+  end
+
+  def credit_card
+    # get cc token from the request
+    unless params[:token].blank?
+      # create the order
+      @order = Order.prefill!(:name => current_product.name, :price => current_product.price, :user_id => @user.id, :payment_option => payment_option)
+      # post to stripe
+      # if successful redirect to the "confirmation" page
+    end
+    # if we got here, something went wrong
+    # redirect to an error page
+  end
+
   def prefill
     @user = User.find_or_create_by(:email => params[:email])
     if params[:paypal_payment_method]

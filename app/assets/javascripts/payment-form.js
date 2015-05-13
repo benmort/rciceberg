@@ -9,7 +9,6 @@ $('.payment-form').on('submit', function(e) {
 
   // cache the form
   var $form = $(this);
-  debugger;
 
   // validate the form
 
