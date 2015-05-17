@@ -1,8 +1,9 @@
-= form_tag({ controller: "order", action: "subscribe", method: "post" }, {class: "payment-form checkout"})
+= form_tag({controller: "order", action: "subscribe", method: "post" }, {class: "payment-form checkout", id: "payment-form"})
   fieldset
     .checkout-header
       h1.checkout-title
         | Complete your order
+        / Use the current product's values
         p Every Month Plan: $15.95
     = render 'payment/credit_card_form'
     hr

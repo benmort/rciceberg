@@ -11,7 +11,20 @@ class OrderController < ApplicationController
   end
 
   def subscribe
-    puts params.to_yaml
+    if Rails.env.development?
+      Stripe.api_key = Settings.stripe.tst.secret_key
+    else
+      Stripe.api_key = Settings.stripe.prd.secret_key
+    end
+
+    charge = Stripe::Charge.create(
+      #### Amount is in cents ####
+      :amount => 1595,
+      # :amount => Product.find(params[:product_id]).price,
+      :currency => Settings.currency.downcase,
+      # get Credit Card token from the request
+      :card => params[:stripeToken]
+    )
   end
 
   def credit_card

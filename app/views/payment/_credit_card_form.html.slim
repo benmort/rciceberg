@@ -1,11 +1,14 @@
 .credit-card
   .credit-card-display
   / *****************************************************************************/
-  / ***** IMPORTANT DO NOT ADD NAME ATTRIBUTES TO THESE FIELDS             ***** /
+  / *****       IMPORTANT DO NOT ADD NAME ATTRIBUTES TO THESE FIELDS       ***** /
   / ***** IF YOU DO, THE CREDIT CARD DETAILS WILL GET POSTED TO OUR SERVER ***** /
-  / ***** DO NOT REMOVE THIS WARNING                                       ***** /
+  / *****                   DO __*NOT*__ REMOVE THIS WARNING                    *****/
   / *****************************************************************************/
+  .payment-errors
   input.name data-stripe="name" autofocus="autofocus" placeholder="Full name"
   input.number data-stripe="number" placeholder="4111 1111 1111 1111"
-  input.cvv data-stripe="cvv" placeholder="CVV"
-  input.expiry data-stripe="expiry" placeholder="MM/YY"
+  input.cvv data-stripe="cvc" placeholder="CVV"
+  input.expiry-month type="hidden" data-stripe="exp-month"
+  input.expiry-year type="hidden" data-stripe="exp-year"
+  input.expiry-combined placeholder="MM/YY"
