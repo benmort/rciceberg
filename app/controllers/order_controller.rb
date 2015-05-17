@@ -7,7 +7,7 @@ class OrderController < ApplicationController
   end
 
   def checkout
-    @payment_options = PaymentOption.ordered
+    # @payment_options = PaymentOption.ordered
   end
 
   def subscribe
@@ -25,6 +25,14 @@ class OrderController < ApplicationController
       # get Credit Card token from the request
       :card => params[:stripeToken]
     )
+
+    puts charge.to_yaml
+
+    # If successful redirect to confirmation
+    # redirect_to :action confirmation with a success
+    # else
+    # redirect_to :action checkout
+    # redirect back to the checkout page as a failure
   end
 
   def credit_card
