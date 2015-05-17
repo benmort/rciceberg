@@ -52,3 +52,7 @@ Product.create :name => "T Delivered Monthly", :description => "Our box comes wi
 ```
 * Run `rails server`
 * Hit `dev.rciceberg.com:3000` to test
+* Add an admin:
+  * Browse to `/admins/sign_up`
+  * add email and password
+
