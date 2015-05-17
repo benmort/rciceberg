@@ -6,7 +6,7 @@ Selfstarter::Application.routes.draw do
 
   root :to => 'pages#landing_page'
   match '/order'               => 'order#index', :via => [:get,:post]
-  get 'order/checkout'
+  match 'checkout'             => 'order#checkout', :via => :get
   match 'order/subscribe'      => 'order#subscribe', :via => :post
   match '/order/share/:uuid'   => 'order#share', :via => :get
   match '/order/ipn'           => 'order#ipn', :via => :post

@@ -23,7 +23,14 @@ class OrderController < ApplicationController
       # :amount => Product.find(params[:product_id]).price,
       :currency => Settings.currency.downcase,
       # get Credit Card token from the request
-      :card => params[:stripeToken]
+      :card => params[:stripeToken],
+      # @TODO: Validate these
+      :address_line1 => params[:address_line1],
+      :address_line2 => params[:address_line2],
+      :address_city => params[:address_city],
+      :address_zip => params[:address_zip],
+      :address_state => params[:address_state],
+      :address_country => params[:address_country]
     )
 
     puts charge.to_yaml
