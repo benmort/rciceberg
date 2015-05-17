@@ -1,11 +1,11 @@
 .credit-card
-  input.name autofocus="autofocus" placeholder="Your name"
-  input.number placeholder="4111 1111 1111 1111"
-  input.cvc placeholder="CVC"
-  select.exp_month.card-expiry-month.stripe-sensitive.required.form-control name="select2" data-stripe="exp-month"
-    /# using a string because the option values need to have a leading 0
-    - ('01'..'12').each do |month|
-      option value="#{month}"#{ Date::MONTHNAMES[month.to_i] }
-  select.card-expiry-year.exp_year.stripe-sensitive.required.form-control name="select2" data-stripe="exp-year"
-    - (0..11).each do |year|
-      option value="#{year + Time.now.year}" #{year + Time.now.year}
+  .credit-card-display
+  / *****************************************************************************/
+  / ***** IMPORTANT DO NOT ADD NAME ATTRIBUTES TO THESE FIELDS             ***** /
+  / ***** IF YOU DO, THE CREDIT CARD DETAILS WILL GET POSTED TO OUR SERVER ***** /
+  / ***** DO NOT REMOVE THIS WARNING                                       ***** /
+  / *****************************************************************************/
+  input.name data-stripe="name" autofocus="autofocus" placeholder="Full name"
+  input.number data-stripe="number" placeholder="4111 1111 1111 1111"
+  input.cvv data-stripe="cvv" placeholder="CVV"
+  input.expiry data-stripe="expiry" placeholder="MM/YY"

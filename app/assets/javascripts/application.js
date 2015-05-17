@@ -17,5 +17,6 @@
 //= require fillsize
 //= require header-banner-init
 //= require jquery.arctext
+//= require node_modules/card/lib/js/jquery.card
 //= require theme
 //= require payment-form

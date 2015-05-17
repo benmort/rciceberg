@@ -1,3 +1,15 @@
+# Stripe API Keys
+stripe:
+    tst:
+        secret_key: "sk_test_IwyHROzQm86ZLLFPG1qjcS3M"
+        publishable_key: "pk_test_7RRyH8dNiV63d3ZWZciiRB1m"
+    prd:
+        secret_key: "sk_live_LvX9LWAQSheDfreg4tfNlodl"
+        publishable_key: "pk_live_50PwszygsowpvarzIyo63JHv"
+
+# stripe_secret_key: "sk_test_IwyHROzQm86ZLLFPG1qjcS3M"
+# stripe_publishable_key: "pk_test_7RRyH8dNiV63d3ZWZciiRB1m"
+
 # Amazon settings -- you'll need an Amazon Payments account, sign up here --> http://bit.ly/SGksTv
 amazon_access_key: "XXXX"
 amazon_secret_key: "XXXX"

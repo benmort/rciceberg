@@ -11,9 +11,7 @@ class OrderController < ApplicationController
   end
 
   def subscribe
-    if params[:credit_card_payment]
-      self.credit_card
-    end
+    puts params.to_yaml
   end
 
   def credit_card

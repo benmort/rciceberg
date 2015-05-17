@@ -4,6 +4,8 @@
       h1.checkout-title
         | Complete your order
         p Every Month Plan: $15.95
-    = render 'payment/address_form'
     = render 'payment/credit_card_form'
+    hr
+    h2 Billing and Delivery Address
+    = render 'payment/address_form'
     button.submit.pure-button.pure-button-primary type="submit" Purchase
