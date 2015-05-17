@@ -1,5 +1,4 @@
 class PagesController < ApplicationController
-  def vbox
-    puts 'hi'
+  def landing_page
   end
 end

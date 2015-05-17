@@ -4,7 +4,7 @@ Selfstarter::Application.routes.draw do
   resources :posts
   resources :tenants
 
-  root :to => 'pages#vbox'
+  root :to => 'pages#landing_page'
   match '/order'               => 'order#index', :via => [:get,:post]
   get 'order/checkout'
   match 'order/subscribe'      => 'order#subscribe', :via => :post
