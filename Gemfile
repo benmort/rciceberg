@@ -1,3 +1,5 @@
+# Use the HTTPS source
+# See [here](https://github.com/stripe/stripe-ruby#bundler)
 source 'https://rubygems.org'
 
 ruby '2.1.2'
@@ -33,11 +35,17 @@ end
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
+### Payment ###
 # Paypal Express Payments
 gem 'paypal-express'
 
 # Kickstarter's awesome Amazon Flexible Payments gem
 gem 'amazon_flex_pay'
+
+# Stripe's Gem
+gem 'stripe'
+
+### End Payment ###
 
 # Configuration File
 gem 'rails_config'
@@ -61,6 +69,8 @@ gem 'slim'
 
 # prd server
 gem 'unicorn'
+
+
 
 # deployment
 gem 'mina'
