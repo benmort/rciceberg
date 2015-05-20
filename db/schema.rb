@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150208103939) do
+ActiveRecord::Schema.define(version: 20150520104400) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -82,6 +82,11 @@ ActiveRecord::Schema.define(version: 20150208103939) do
     t.datetime "updated_at"
   end
 
+  create_table "plans", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "posts", force: true do |t|
     t.integer  "tenant_id"
     t.string   "title"
@@ -99,6 +104,12 @@ ActiveRecord::Schema.define(version: 20150208103939) do
     t.integer  "stock"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "subscriptions", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "stripe_customer_token"
   end
 
   create_table "tenant_profiles", force: true do |t|

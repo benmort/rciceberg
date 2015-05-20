@@ -1,4 +1,8 @@
 Selfstarter::Application.routes.draw do
+  resources :plans
+
+  resources :subscriptions
+
   devise_for :admins
   resources :products
   resources :posts
