@@ -1,0 +1,79 @@
+#about.home-top
+  .container
+    .row
+      .col-md-12
+        .home-jumbotron.jumbotron
+          h1 Our box comes with all you need, when you need it most
+          p Avoid dealing with buying at the checkout, have your VBox products delivered discreetly to you.
+          p.lead The box includes 20 VBox.
+          a.btn.btn-info.btn-lg.purchase.leanModal href="#payment"  Try VBox from $15.95/month
+#features.features.home-page-widgets
+  .container
+    .row
+      aside#bavotasan_custom_text_widget-2.home-widget.col-md-3.bavotasan_custom_text_widget
+        a href="#"
+          i.info.fa.fa-truck
+        h3.home-widget-title
+          a href="#"  Free Shipping
+        .textwidget
+          p Delivered for free each and every month.
+      aside#bavotasan_custom_text_widget-5.home-widget.col-md-3.bavotasan_custom_text_widget
+        a href="#"
+          i.info.fa.fa-smile-o
+        h3.home-widget-title
+          a href="#" Trusted Brands
+        .textwidget
+          p Always have the products and brands you know and trust
+      aside#bavotasan_custom_text_widget-3.home-widget.col-md-3.bavotasan_custom_text_widget
+        a href="#"
+          i.info.fa.fa-heart
+        h3.home-widget-title
+          a href="#" Optional Extras
+        .textwidget
+          /# p Premium Gluten free chocolate. Delicious. What more is there to say?
+          /# p Tea, for when you need that little something extra
+          p Optional extras when you need them, for that special time of the month
+      aside#bavotasan_custom_text_widget-4.home-widget.col-md-3.bavotasan_custom_text_widget
+        a href="#"
+          i.info.fa.fa-check
+        h3.home-widget-title
+          a href="#"  Privacy Guaranteed
+        .textwidget
+          p Arrives discreetly in it's own box. Never have to leave the house to buy VBox again!
+
+#pricing.pricing
+  .container
+    .row
+      section.layer.plans.pricing-table
+        section
+          - @plans.each do |plan|
+            section.third.lift.plan-tier
+              h4 = plan.name
+              h5
+                sup.superscript $
+                span.plan-price = plan.price
+                sub
+                  |/month
+              ul
+                li
+                  strong 20
+                  |  Vbox
+                li
+                  strong 2
+                  |  extras (Tea and Chocolate)
+                li
+                  strong Free &amp; discreet
+                  |  shipping
+                li
+                  | Cancel anytime
+                li
+                  = link_to "Try VBox now!", new_subscription_path(:plan_id => plan.id), :class => "btn btn-info btn-lg"
+          div style=("clear: both")
+
+#contact.contact
+  .container
+    .row
+      h2 Contact
+      | If you need help at any time, please contact us at
+      a href="mailto:help@vbox.com"  help@vbox.com
+    

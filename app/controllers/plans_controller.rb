@@ -5,7 +5,7 @@ class PlansController < ApplicationController
 
   def index
     # order by price in ascending order
-    @plans = Plan.order("price")
+    @plans = Plan.all.order("price")
     respond_with(@plans)
   end
 end

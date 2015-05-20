@@ -5,5 +5,9 @@ Product.create!(:tenant_id => "1", :name => 'Product', :description => "this is 
 PaymentOption.create!(:name => "Paypal", :fee_type => "flat", :fee => "1.00", :description => "Paypal Express")
 PaymentOption.create!(:name => "Amazon", :fee_type => "flat", :fee => "1.20", :description => "Amazon Flex Pay")
 
-Admin.create!(:email => "benjaminmort@gmail.com", :password => "appleseed", :password_confirmation => "appleseed")
-Admin.create!(:email => "email.scottwarren@gmail.com", :password => "appleseed", :password_confirmation => "appleseed")
+# Admin.create!(:email => "benjaminmort@gmail.com", :password => "appleseed", :password_confirmation => "appleseed")
+# Admin.create!(:email => "email.scottwarren@gmail.com", :password => "appleseed", :password_confirmation => "appleseed")
+
+Plan.create!(:name => "Extras Pack", :price => 25.95)
+Plan.create!(:name => "Her Favourites Pack", :price => 20.95)
+Plan.create!(:name => "Every Month Pack", :price => 15.95)
