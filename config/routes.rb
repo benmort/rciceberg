@@ -9,8 +9,6 @@ Selfstarter::Application.routes.draw do
   resources :tenants
 
   root :to => 'plans#index'
-  match '/checkout'            => 'subscriptions#create', :via => :get
-  match '/subscribe'           => 'order#subscribe', :via => :post
   match '/confirmation'        => 'order#confirmation', :via => [:get]
   match '/order/share/:uuid'   => 'order#share', :via => :get
   match '/order/ipn'           => 'order#ipn', :via => :post

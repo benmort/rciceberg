@@ -4,8 +4,8 @@ class PlansController < ApplicationController
   respond_to :html
 
   def index
-    # order by price in ascending order
-    @plans = Plan.all.order("price")
+    # order by price in descending order
+    @plans = Plan.all.order('price DESC')
     respond_with(@plans)
   end
 end

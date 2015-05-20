@@ -8,6 +8,6 @@ PaymentOption.create!(:name => "Amazon", :fee_type => "flat", :fee => "1.20", :d
 # Admin.create!(:email => "benjaminmort@gmail.com", :password => "appleseed", :password_confirmation => "appleseed")
 # Admin.create!(:email => "email.scottwarren@gmail.com", :password => "appleseed", :password_confirmation => "appleseed")
 
-Plan.create!(:name => "Extras Pack", :price => 25.95)
-Plan.create!(:name => "Her Favourites Pack", :price => 20.95)
-Plan.create!(:name => "Every Month Pack", :price => 15.95)
+Plan.create!(:name => "Extras Pack", :price => 25.95, :description => "2 extras (Tea and Chocolate)")
+Plan.create!(:name => "Her Favourites Pack", :price => 20.95, :description => "1 extra (Tea or Chocolate)")
+Plan.create!(:name => "Every Month Pack", :price => 15.95, :description => "0 extras")

@@ -48,6 +48,8 @@
         section
           - @plans.each do |plan|
             section.third.lift.plan-tier
+              - if plan.is_most_popular
+                h6 Most popular!
               h4 = plan.name
               h5
                 sup.superscript $
@@ -58,16 +60,15 @@
                 li
                   strong 20
                   |  Vbox
-                li
-                  strong 2
-                  |  extras (Tea and Chocolate)
+                li = plan.description
                 li
                   strong Free &amp; discreet
                   |  shipping
                 li
                   | Cancel anytime
                 li
-                  = link_to "Try VBox now!", new_subscription_path(:plan_id => plan.id), :class => "btn btn-info btn-lg"
+                  / a.btn.btn-info.btn-lg.purchase.leanModal href="#payment"  Try VBox now!
+                  = link_to "Try VBox now!", new_subscription_path(:plan_id => plan.id), :class => "btn btn-info btn-lg purchase leanModal"
           div style=("clear: both")
 
 #contact.contact
