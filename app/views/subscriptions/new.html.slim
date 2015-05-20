@@ -1,8 +1,10 @@
 .container
-  <h1>Signing up for
-    = ' ' + @subscription.plan.name
+  h1
+    | Signing up for 
+    = @subscription.plan.name
+    = ' ' + @subscription.plan.human_price
 
-  = form_for @subscription do |f|
+  = form_for @subscription, html: { :class => 'payment-form checkout', 'id' => 'payment-form' } do |f|
     - if @subscription.errors.any?
       .error_messages
         h2
@@ -12,28 +14,41 @@
         - @subscription.errors.full_messages.each do |msg|
           li
             = msg
+    fieldset
+      .checkout-header
+        h1.checkout-title
+          | Complete your order
+          p Every Month Plan: $15.95
 
-    = f.hidden_field :plan_id
 
-    = f.hidden_field :stripe_card_token
+      hr
 
-    .field
-      = f.label :email
-      = f.text_field :email
-    - if @subscription.stripe_card_token.present?
-      Credit card has been provided.
-    - else
+      h2 Billing and Delivery Address
+      = f.hidden_field :plan_id
+
+      = f.hidden_field :stripe_card_token
+
       .field
-        = label_tag :card_number, "Credit Card Number"
-        = text_field_tag :card_number, nil, name: nil
-      .field
-        = label_tag :card_code, "Security Code on Card (CVV)"
-        = text_field_tag :card_code, nil, name: nil
-      .field
-        = label_tag :card_month, "Card Expiration"
-        = select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month"}
-        = select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year"}
-    #stripe_error
-      <noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>
-    .action
-      = f.submit "Subscribe"
+        = f.label :email
+        = f.text_field :email
+      - if @subscription.stripe_card_token.present?
+        Credit card has been provided.
+      - else
+        .credit-card
+          .credit-card-display
+          / *****************************************************************************/
+          / *****       IMPORTANT DO NOT ADD NAME ATTRIBUTES TO THESE FIELDS       ***** /
+          / ***** IF YOU DO, THE CREDIT CARD DETAILS WILL GET POSTED TO OUR SERVER ***** /
+          / *****                   DO __*NOT*__ REMOVE THIS WARNING                    *****/
+          / *****************************************************************************/
+          .payment-errors
+          input.name data-stripe="name" autofocus="autofocus" placeholder="Full name"
+          input.number data-stripe="number" placeholder="4111 1111 1111 1111"
+          input.cvv data-stripe="cvc" placeholder="CVV"
+          input.expiry-month type="hidden" data-stripe="exp-month"
+          input.expiry-year type="hidden" data-stripe="exp-year"
+          input.expiry-combined placeholder="MM/YY"
+      #stripe_error
+        noscript JavaScript is not enabled and is required for this form. First enable it in your web browser settings.
+      .action
+        = f.submit "Purchase", :class => 'submit pure-button pure-button-primary'

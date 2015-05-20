@@ -6,4 +6,8 @@ class Plan < ActiveRecord::Base
   def is_most_popular
     return false
   end
+
+  def human_price
+    return "$" + price.to_s
+  end
 end
